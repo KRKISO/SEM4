@@ -1,8 +1,8 @@
 ---
 layout: default
-title: 2.7.1 Sprint Planning 
-parent: 2.7 Sprint 02
-grand_parent: 2. Projektorganisation
+title: 3.7.1 Sprint Planning 
+parent: 3.7 Sprint 02
+grand_parent: 3. Projektorganisation
 nav_order: 1
 ---
 
