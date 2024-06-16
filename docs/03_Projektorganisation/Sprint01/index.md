@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 2.7 Sprint 01
-nav_order: 7
+nav_order: 6
 parent: 2. Projektorganisation
 has_children: true
 ---

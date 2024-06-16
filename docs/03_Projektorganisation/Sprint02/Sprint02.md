@@ -1,3 +1,11 @@
+---
+layout: default
+title: 2.7.1 Sprint Planning 
+parent: 2.7 Sprint 02
+grand_parent: 2. Projektorganisation
+nav_order: 1
+---
+
 ## Projekttreffen-Protokoll
 
 **Datum / Uhrzeit**: 16.06.2024

@@ -2,7 +2,7 @@
 layout: default
 title: 2.6 Risikomanagement
 parent: 2. Projektorganisation
-nav_order: 6
+nav_order: 5
 ---
 
 # 2.6 Risikomanagement
