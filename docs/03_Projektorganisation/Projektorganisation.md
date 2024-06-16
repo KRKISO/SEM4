@@ -1,7 +1,7 @@
 ---
 layout: default
-title: 2.2 Projektorganisation
-parent: 2. Projektorganisation
+title: 3.2 Projektorganisation
+parent: 3. Projektorganisation
 nav_order: 2
 ---
 

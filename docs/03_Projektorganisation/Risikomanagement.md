@@ -1,7 +1,7 @@
 ---
 layout: default
-title: 2.6 Risikomanagement
-parent: 2. Projektorganisation
+title: 3.6 Risikomanagement
+parent: 3. Projektorganisation
 nav_order: 5
 ---
 

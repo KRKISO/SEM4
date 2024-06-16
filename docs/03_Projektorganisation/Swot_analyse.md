@@ -1,7 +1,7 @@
 ---
 layout: default
-title: 2.3 SWOT Analyse
-parent: 2. Projektorganisation
+title: 3.3 SWOT Analyse
+parent: 3. Projektorganisation
 nav_order: 3
 ---
 

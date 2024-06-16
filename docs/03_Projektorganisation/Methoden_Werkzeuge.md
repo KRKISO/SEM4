@@ -1,7 +1,7 @@
 ---
 layout: default
-title: 2.4 Metoden & Werkzeuge
-parent: 2. Projektorganisation
+title: 3.4 Metoden & Werkzeuge
+parent: 3. Projektorganisation
 nav_order: 4
 ---
 
