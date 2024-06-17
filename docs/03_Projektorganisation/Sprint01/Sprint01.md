@@ -25,7 +25,7 @@ Aufgrund der aktuellen ereignisse konnten die PO und SME nicht teilnehmen. Es ga
 
 ### Aktueller Zeitplan
 
-![Sprint1Zeitplan](../../resources/images/Sprint1Zeitplan.PNG)
+![Sprint1Zeitplan](../../../resources/images/Sprint1Zeitplan.PNG)
 
 ### Aktueller Entwicklungsstand
 
@@ -51,7 +51,7 @@ Aufgrund der aktuellen ereignisse konnten die PO und SME nicht teilnehmen. Es ga
 - **Dokumentation**: Dokumentation beginnnen
 - **Präsentation**: Präsentation erstellen
 
-![Sprint2Kanban](../../resources/images/Sprint2Kanban.PNG)
+![Sprint2Kanban](../../../resources/images/Sprint2Kanban.PNG)
 
 ### Aufgetretene Probleme
 
