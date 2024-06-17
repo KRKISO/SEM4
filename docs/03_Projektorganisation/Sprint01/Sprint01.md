@@ -23,6 +23,10 @@ Aufgrund der aktuellen ereignisse konnten die PO und SME nicht teilnehmen. Es ga
 - **Umsetzung**: 90%
 - **Präsentation**: 0%
 
+### Aktueller Zeitplan
+
+![Sprint1Zeitplan](../../resources/images/Sprint1Zeitplan.PNG)
+
 ### Aktueller Entwicklungsstand
 
 - **Erstellung der Container**: Die Container konnten erfolgreich erstellt werden. (Reverse Proxy, MySQL und Applikation (Fronend/API))
@@ -44,9 +48,10 @@ Aufgrund der aktuellen ereignisse konnten die PO und SME nicht teilnehmen. Es ga
 
 ### To Do
 
-- **CSS**: CSS der Applikation noch weiter verschönern.
 - **Dokumentation**: Dokumentation beginnnen
 - **Präsentation**: Präsentation erstellen
+
+![Sprint2Kanban](../../resources/images/Sprint2Kanban.PNG)
 
 ### Aufgetretene Probleme
 
