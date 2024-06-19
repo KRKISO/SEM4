@@ -5,6 +5,7 @@ parent: 4. DoItNow!
 nav_order: 3
 ---
 
+{% raw %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,3 +33,4 @@ nav_order: 3
   </script>
 </body>
 </html>
+{% endraw %}
