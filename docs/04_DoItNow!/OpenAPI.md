@@ -19,7 +19,7 @@ nav_order: 3
   <script>
     window.onload = function() {
       const ui = SwaggerUIBundle({
-        url: '../resources/artifacts/openapi.yaml',  // URL to your Swagger YAML file
+        url: '../../resources/artifacts/openapi.yaml',  // URL to your Swagger YAML file
         dom_id: '#swagger-ui',
         presets: [
           SwaggerUIBundle.presets.apis,
