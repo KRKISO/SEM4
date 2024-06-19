@@ -48,7 +48,7 @@ Aufgrund der aktuellen ereignisse konnten die PO und SME nicht teilnehmen. Es ga
 
 ### To Do
 
-- **Dokumentation**: Dokumentation beginnnen
+- **Dokumentation**: Dokumentation fortsetzen
 - **Präsentation**: Präsentation erstellen
 
 ![Sprint2Kanban](../../../resources/images/Sprint2Kanban.PNG)
