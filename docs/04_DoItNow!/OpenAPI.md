@@ -1,9 +1,11 @@
 ---
 layout: default
-title: 4.4 Application Open API
-parent: 4. DoItNow!
+title: API Documentation
+parent: Application
 nav_order: 3
 ---
+
+# API Documentation
 
 {% raw %}
 <!DOCTYPE html>
@@ -20,7 +22,7 @@ nav_order: 3
   <script>
     window.onload = function() {
       const ui = SwaggerUIBundle({
-        url: '../../resources/artifacts/openapi.yaml',  // URL to your Swagger YAML file
+        url: '/resources/artifacts/openapi.yaml',  // Adjust the path to your YAML file
         dom_id: '#swagger-ui',
         presets: [
           SwaggerUIBundle.presets.apis,
