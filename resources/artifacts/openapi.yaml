@@ -1,0 +1,322 @@
+openapi: 3.0.1
+info:
+  title: Application API Documentation
+  description: This documentation provides an overview of all API endpoints in the application.
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Local development server
+
+paths:
+  /:
+    get:
+      summary: Home Page
+      description: Serves the home page.
+      responses:
+        '200':
+          description: A HTML document representing the home page.
+  /login:
+    get:
+      summary: Login Page
+      description: Displays the login page.
+      responses:
+        '200':
+          description: A HTML document for user login.
+    post:
+      summary: Authenticate User
+      description: Handles user authentication.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Successfully authenticated.
+        '401':
+          description: Invalid credentials.
+  /register:
+    get:
+      summary: Registration Page
+      description: Displays the user registration page.
+      responses:
+        '200':
+          description: A HTML document for user registration.
+    post:
+      summary: Register New User
+      description: Handles new user registration.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '201':
+          description: User successfully registered.
+        '400':
+          description: Invalid input.
+  /account:
+    get:
+      summary: Account Page
+      description: Displays the user account page.
+      responses:
+        '200':
+          description: A HTML document for the user account page.
+    post:
+      summary: Update Account Information
+      description: Handles updating user account information.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Account information updated successfully.
+        '400':
+          description: Invalid input.
+  /logout:
+    post:
+      summary: Logout User
+      description: Logs the user out of the application.
+      responses:
+        '204':
+          description: User logged out successfully.
+  /api/tasks:
+    get:
+      summary: Get All Tasks
+      description: Retrieves a list of all tasks.
+      responses:
+        '200':
+          description: A list of tasks.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    completed:
+                      type: boolean
+    post:
+      summary: Create New Task
+      description: Creates a new task.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                completed:
+                  type: boolean
+      responses:
+        '201':
+          description: Task created successfully.
+        '400':
+          description: Invalid input.
+  /api/tasks/{id}:
+    get:
+      summary: Get Task by ID
+      description: Retrieves a task by its ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A task object.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  completed:
+                    type: boolean
+        '404':
+          description: Task not found.
+    put:
+      summary: Update Task
+      description: Updates a task by its ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                completed:
+                  type: boolean
+      responses:
+        '200':
+          description: Task updated successfully.
+        '404':
+          description: Task not found.
+    delete:
+      summary: Delete Task
+      description: Deletes a task by its ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Task deleted successfully.
+        '404':
+          description: Task not found.
+  /add_task/{tasklist_id}:
+    post:
+      summary: Add Task to Task List
+      description: Adds a task to a specific task list.
+      parameters:
+        - name: tasklist_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                completed:
+                  type: boolean
+      responses:
+        '201':
+          description: Task added to the task list successfully.
+        '400':
+          description: Invalid input.
+  /delete_task/{task_id}:
+    post:
+      summary: Delete Task
+      description: Deletes a task by its ID.
+      parameters:
+        - name: task_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Task deleted successfully.
+        '404':
+          description: Task not found.
+  /create_tasklist:
+    post:
+      summary: Create New Task List
+      description: Creates a new task list.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+      responses:
+        '201':
+          description: Task list created successfully.
+        '400':
+          description: Invalid input.
+  /delete_tasklist/{tasklist_id}:
+    post:
+      summary: Delete Task List
+      description: Deletes a task list by its ID.
+      parameters:
+        - name: tasklist_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Task list deleted successfully.
+        '404':
+          description: Task list not found.
+  /store_ip:
+    post:
+      summary: Store User IP Address
+      description: Stores the user's IP address.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ip_address:
+                  type: string
+      responses:
+        '200':
+          description: IP address stored successfully.
+        '400':
+          description: Invalid input.
+
+components:
+  schemas:
+    Task:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        completed:
+          type: boolean
+    User:
+      type: object
+      properties:
+        username:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+
+tags:
+  - name: User
+    description: Operations related to user management
+  - name: Tasks
+    description: Operations related to task management
+  - name: System
+    description: System and utility endpoints
+
