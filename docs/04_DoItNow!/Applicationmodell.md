@@ -11,13 +11,13 @@ nav_order: 4
 
 Die "DoItNow"-Applikation ist eine Microservices-basierte ToDo-Listen-Anwendung, die es Benutzern ermöglicht, ihre Aufgaben zu verwalten und zu organisieren. Die Anwendung nutzt eine REST API, um die Kommunikation zwischen dem Frontend und Backend zu gewährleisten. Jeder Microservice ist für eine spezifische Funktion verantwortlich und wird in einem Docker-Container betrieben, was eine flexible Bereitstellung und Skalierung ermöglicht.
 
-![App_Infra_API](/mnt/data/App_Infra.png)
+![App_Infra_API](../../resources/images/App_Infra.png)
 
 ## Anwendungsarchitektur
 
 Die folgende Abbildung zeigt die Architektur der "DoItNow"-Applikation:
 
-![App_Infra_API](/mnt/data/App_Infra_API.png)
+![App_Infra_API](../../resources/images/App_Infra_API.png)
 
 In der Abbildung sind die verschiedenen Komponenten und deren Interaktionen innerhalb der Applikation dargestellt:
 
@@ -40,7 +40,7 @@ In der Abbildung sind die verschiedenen Komponenten und deren Interaktionen inne
 
 Um die Interaktion zwischen den verschiedenen Komponenten der Anwendung zu visualisieren, zeigt das folgende PlantUML-Diagramm den Datenfluss innerhalb der "DoItNow"-Applikation:
 
-![Authentication](/mnt/data/Authentication.png)
+![Authentication](../../resources/images/Authentication.png)
 
 ## Beschreibung der Datenflüsse
 
