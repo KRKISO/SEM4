@@ -1,0 +1,23 @@
+@startuml
+actor Benutzer
+
+rectangle "Frontend" {
+  Benutzer --> (React App) : "Interagiert mit"
+  (React App) --> (Auth API) : "Anfragen mit JWT"
+  (React App) --> (Tasks API) : "Anfragen mit JWT"
+  (React App) --> (Notifications API) : "Anfragen"
+}
+
+rectangle "Backend" {
+  (Auth API) --> (MySQL Database) : "Speichert/Abfragt Benutzerdaten"
+  (Tasks API) --> (MySQL Database) : "Speichert/Abfragt Aufgaben"
+  (Notifications API) --> (MySQL Database) : "Liest Benutzerdaten"
+}
+
+cloud "AWS" {
+  (Auth API)
+  (Tasks API)
+  (Notifications API)
+  (MySQL Database)
+}
+@enduml

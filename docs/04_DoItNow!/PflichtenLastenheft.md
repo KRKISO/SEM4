@@ -1,8 +1,8 @@
 ---
 layout: default
-title: 4.5 Pflichten und Lastenheft
+title: 4.2 Pflichten und Lastenheft
 parent: 4. DoItNow!
-nav_order: 4
+nav_order: 2
 ---
 
 
@@ -19,6 +19,7 @@ nav_order: 4
 ### API-Schnittstelle
 - Die Flask API soll alle CRUD-Operationen für Aufgaben und Benutzer bereitstellen.
 - Die API soll sicherstellen, dass nur autorisierte Benutzer auf ihre eigenen Daten zugreifen können.
+- Es soll eine externe API eingebunden werden, um den Standort des Benutzers bei TaskListen anzuzeigen. 
 
 ### Sicherheit
 - Zugriffsrechte sollen gemäß den Prinzipien der minimalen Berechtigung gewährt werden.
