@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: 4.7 Testing
