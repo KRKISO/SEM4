@@ -5,6 +5,6 @@ remote_theme: just-the-docs/just-the-docs
 url: https://krkiso.github.io/DOITNOW/
 
 aux_links:
-  Projektplanung: 
+  JIRA Projekt: https://marconline99.atlassian.net/jira/software/projects/DOIT/boards/34/timeline
 
-footer_content: "2024 Marc Hofstetter"
+footer_content: "2024 Marc Hofstetter Sem03 für Technische Berufsschule Zürich, Lehrgang Cloud Native Engineer"
