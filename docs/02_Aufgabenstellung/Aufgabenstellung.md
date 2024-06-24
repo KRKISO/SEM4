@@ -1,12 +1,12 @@
 ---
 layout: default
 title: 2.1 Aufgabenstellung 
-grand_parent: 2. Aufgabenstellung
+parent: 2. Aufgabenstellung
 nav_order: 1
 ---
 
-
 ###  Titel der Facharbeit
+DOITNOW!
 Entwicklung einer skalierbaren ToDo-Listen-Anwendung mit Microservices: Technologische Umsetzung und Dokumentation
 
 ### Ausgangslage
