@@ -51,7 +51,19 @@ Entwicklung einer voll funktionsfähigen ToDo-Listen-Anwendung unter Verwendung 
 
 ## Lieferbare Ergebnisse
 - Voll funktionsfähige ToDo-Listen-Anwendung
-- Technische Dokumentation (PDF)
+- Technische Dokumentation
 - Präsentation der Arbeitsergebnisse
 
 ## Bewertungskriterien
+
+| Kriterien                                               | Kommentare | Punkte |
+|---------------------------------------------------------|------------|--------|
+| **1. Substanz, Aufbau des Inhalts**                     |            | (0 bis 5 Punkte) |
+| **2. Darstellung der Theorie**<br>(Form, Sprache, Quellen) |            | (0 bis 5 Punkte) |
+| **3. Verknüpfung von Theorie und Praxis**<br>(formell)  |            | (0 bis 5 Punkte) |
+| **4. Verknüpfung von Theorie und Praxis**<br>(fachlich) |            | (0 bis 5 Punkte) |
+| **5. Reflexionstiefe**                                  |            | (0 bis 5 Punkte) |
+| **Punkte gesamt**                                       | (erreichte Punktzahl) | (max. 25 Punkte) |
+
+## Notenschlüssel:
+Erreichte Punkte * 5 / max. Punkte + 1
