@@ -5,11 +5,11 @@ parent: 3. Projektorganisation
 nav_order: 4
 ---
 
-# 2.4 Metoden & Werkzeuge
+# 3.4 Metoden & Werkzeuge
 
 Das Projekt wird mit hilfe von verschiedensten Tools und Methoden durchgeführt.
 
-## 2.4.1 Jira
+## 3.4.1 Jira
 
 Jira ermöglicht es Struktur in das Projekt zu bringen. Es wird ein Scrum/Kanban Board erstellt um den Fortschritt zu prüfen.
 
@@ -36,7 +36,7 @@ Jeder Task wird mit den folgenden Tags ausgestattet um diesen zu speizifieren.
 | **Story Points**                         | Eine Schätzung des Aufwands, basierend auf Komplexität und Zeitaufwand.                                |
 
 
-## 2.4.2 GitHub Repository & Pages
+## 3.4.2 GitHub Repository & Pages
 
 Die Dokumentation dieser Arbeit wird in Markdown geschrieben und in einem Git-Repository auf GitHub verwaltet. Dieses Repository dient als zentraler Speicherort für alle Projektdateien und ermöglicht eine einfache Versionierung und Zusammenarbeit.
 
@@ -44,7 +44,7 @@ Mit [GitHub Pages](https://pages.github.com/) kann diese Arbeit als statische We
 
 [Jekyll](https://jekyllrb.com/) wird verwendet, um die in Markdown geschriebenen Dateien in HTML umzuwandeln und ein passendes Design zu integrieren. Jekyll ermöglicht es, das gesamte User Interface der Website einfach zu gestalten und anzupassen.
 
-## 2.4.3 GitLab Repository
+## 3.4.3 GitLab Repository
 
 Das eigentliche Projekt wird in einem GitLab Repository umgesetzt aufgrund der bisherigen Erfahrung mit GitLab. 
 

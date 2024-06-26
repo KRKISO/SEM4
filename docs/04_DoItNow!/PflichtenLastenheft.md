@@ -6,7 +6,7 @@ nav_order: 2
 ---
 
 
-# Pflichtenheft
+# 4.2.1 Pflichtenheft
 
 ## Funktionale Anforderungen / Soll-Zustand
 
@@ -35,7 +35,7 @@ nav_order: 2
 - **Wartbarkeit:** Der Code soll gut strukturiert und dokumentiert sein, um eine einfache Wartung und Weiterentwicklung zu ermöglichen.
 
 
-# Lastenheft
+# 4.2.2 Lastenheft
 
 ## Ausgangslage / Ist-Zustand
 

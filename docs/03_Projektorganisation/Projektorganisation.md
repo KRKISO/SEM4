@@ -5,13 +5,13 @@ parent: 3. Projektorganisation
 nav_order: 2
 ---
 
-# 2.2 Projektorganisation
+# 3.2 Projektorganisation
 
 Die folgende Grafik stellt den Aufbau meines Projektes dar.  
 
 ![Projektorganisation](../../resources/images/Projektaufbauorganisation.PNG)
 
-## 2.2.1 Rollenbeschreibung
+## 3.2.1 Rollenbeschreibung
 
 ### Projekt und Student
 

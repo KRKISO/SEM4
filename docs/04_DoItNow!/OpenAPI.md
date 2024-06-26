@@ -5,7 +5,7 @@ parent: 4. DoItNow!
 nav_order: 6
 ---
 
-# API Documentation für "DoItNow"
+# 4.6 API Documentation für "DoItNow"
 
 Die "DoItNow"-Applikation stellt eine RESTful API bereit, die es ermöglicht, die verschiedenen Funktionen der Anwendung programmatisch zu nutzen. Diese API ermöglicht die Interaktion mit Benutzerdaten, Aufgabenlisten und Aufgaben sowie das Senden von Benachrichtigungen.
 
@@ -14,7 +14,7 @@ Die API ist nach dem OpenAPI-Standard definiert, was die Integration und Nutzung
 <iframe src="../../resources/artifacts/swagger.html" width="100%" height="600px">
 </iframe>
 
-## API-Struktur
+## 4.6.1 API-Struktur
 
 Die API der "DoItNow"-Applikation ist in mehrere Hauptbereiche unterteilt:
 
@@ -116,7 +116,7 @@ Die API der "DoItNow"-Applikation ist in mehrere Hauptbereiche unterteilt:
   - `202 Accepted`: Benachrichtigung erfolgreich gesendet.
   - `400 Bad Request`: Ungültige Eingabedaten.
 
-## Nutzung der API
+## 4.6.2 Nutzung der API
 
 Die API ist über HTTP-Anfragen zugänglich und verwendet JSON für den Datenaustausch. Jede Route wird über die entsprechenden HTTP-Methoden (GET, POST, PUT, DELETE) aufgerufen. Die Authentifizierung und Autorisierung erfolgen durch Flask-Sessions, die bei der Anmeldung erstellt und bei jedem nachfolgenden Aufruf überprüft werden.
 

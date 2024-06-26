@@ -5,7 +5,7 @@ parent: 4. DoItNow!
 nav_order: 3
 ---
 
-# Fiktive Kostenanalyse für die Semesterarbeit
+# 4.3 Fiktive Kostenanalyse für die Semesterarbeit
 
 Da es sich um eine akademische Arbeit handelt und die Arbeit nicht in den Echtbetrieb übergeht, wird hier eine fiktive Kostenanalyse durchgeführt. Die Semesterarbeit ist auf maximal 50 Arbeitsstunden begrenzt. Die Berechnung erfolgt in CHF, wobei ein Stundensatz von 50 CHF angesetzt wird.
 
@@ -37,6 +37,6 @@ Da es sich um eine akademische Arbeit handelt und die Arbeit nicht in den Echtbe
 
 Diese Kostenanalyse bietet eine Übersicht über die erwarteten Aufwände und ermöglicht eine gezielte Ressourcenplanung für das Projekt.
 
-## Unterhaltkosten
+## 4.4 Unterhaltkosten
 Falls die Applikation Prodkitiv werden sollte, müsste hier noch eine Rechnung für die Unterhaltskosten errechnet werden. 
 Da ich allerdings keine abhängikeiten zu externen kostenpflichtigen Diensten habe, würden hier nur die Kosten zum Hosten der Applikation auftreten. 

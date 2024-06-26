@@ -5,7 +5,7 @@ parent: 3. Projektorganisation
 nav_order: 1
 ---
 
-# 2.1 Projektmethode
+# 3.1 Projektmethode
 
 Dieses Projekt wird mit einer Kombination aus Scrum und Kanban umgesetzt. Diese Methoden werden durch die Implementierung von Jira unterstützt, da das Projekt von einer einzelnen Person durchgeführt wird.
 

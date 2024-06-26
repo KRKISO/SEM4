@@ -5,15 +5,15 @@ parent: 4. DoItNow!
 nav_order: 4
 ---
 
-# Technische Beschreibung der ToDo-Listen-Anwendung "DoItNow"
+# 4.4 Technische Beschreibung der ToDo-Listen-Anwendung "DoItNow"
 
-## Überblick
+## 4.4.1 Überblick
 
 Die "DoItNow"-Applikation ist eine Microservices-basierte ToDo-Listen-Anwendung, die es Benutzern ermöglicht, ihre Aufgaben zu verwalten und zu organisieren. Die Anwendung nutzt eine REST API, um die Kommunikation zwischen dem Frontend und Backend zu gewährleisten. Jeder Microservice ist für eine spezifische Funktion verantwortlich und wird in einem Docker-Container betrieben, was eine flexible Bereitstellung und Skalierung ermöglicht.
 
 ![App_Infra_API](../../resources/images/App_Infra.png)
 
-## Anwendungsarchitektur
+## 4.4.2 Anwendungsarchitektur
 
 Die folgende Abbildung zeigt die Architektur der "DoItNow"-Applikation:
 
@@ -42,7 +42,7 @@ Um die Interaktion zwischen den verschiedenen Komponenten der Anwendung zu visua
 
 ![Authentication](../../resources/images/Authentication.png)
 
-## Beschreibung der Datenflüsse
+## 4.2.3 Beschreibung der Datenflüsse
 
 Die Hauptdatenflüsse innerhalb der "DoItNow"-Applikation umfassen die Benutzerinteraktion mit der Anwendung, die Aufgabenverwaltung und das Versenden von Benachrichtigungen.
 
@@ -63,7 +63,7 @@ Die Hauptdatenflüsse innerhalb der "DoItNow"-Applikation umfassen die Benutzeri
 - Der **Notifications API**-Service liest die relevanten Benutzerdaten aus der MySQL-Datenbank.
 - Basierend auf Ereignissen wie fälligen Aufgaben sendet der Dienst Benachrichtigungen an die Benutzer.
 
-## Autorisierung
+## 4.2.4 Autorisierung
 
 Die Anwendung verwendet **Flask Sessions** für die Autorisierung. Nach der Anmeldung erhält der Benutzer eine Session, die auf dem Server gespeichert wird und bei jeder nachfolgenden Anfrage an die API zur Authentifizierung genutzt wird. Diese Session enthält Informationen über die Benutzeridentität und seine Berechtigungen. Jeder Microservice überprüft die Session, um sicherzustellen, dass der Benutzer autorisiert ist, die angeforderte Aktion durchzuführen.
 

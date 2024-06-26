@@ -5,9 +5,9 @@ parent: 4. DoItNow!
 nav_order: 1
 ---
 
-# Projektumsetzung und Technologieeinsatz
+# 4.1 Projektumsetzung und Technologieeinsatz
 
-## Microservices-Prinzip
+## 4.1.2 Microservices-Prinzip
 
 ### Was sind Microservices?
 
@@ -49,27 +49,27 @@ In diesem Projekt zur Entwicklung einer ToDo-Listen-Anwendung werden die Microse
 3. **Deployment und Management**:
    - Jeder Microservice wird in einem Docker-Container ausgeführt und auf AWS EC2-Instanzen bereitgestellt. Die Verwaltung und Orchestrierung dieser Container wird durch AWS-Dienste unterstützt, die eine einfache Skalierung und Wartung ermöglichen.
 
-## AWS (Amazon Web Services) und AWS Academy Lab
+## 4.1.3 AWS (Amazon Web Services) und AWS Academy Lab
 
 Die Anwendung wird auf AWS gehostet, einer führenden Cloud-Plattform, die uns eine robuste Infrastruktur bietet. Durch den Zugang zum AWS Academy Lab können wir praktische Erfahrungen mit AWS-Services wie EC2 (Elastic Compute Cloud), S3 (Simple Storage Service) und RDS (Relational Database Service) sammeln. Diese Dienste werden genutzt, um die Anwendung in einer sicheren und skalierbaren Cloud-Umgebung zu betreiben.
 
-## GitLab und CI/CD mit GitLab Pipelines
+## 4.1.4 GitLab und CI/CD mit GitLab Pipelines
 
 GitLab wird als zentrale Entwicklungsplattform verwendet. Die Entwicklung erfolgt in Git-Repositories, wo Entwickler gemeinsam an Code arbeiten und Änderungen verwalten können. Durch die Integration von GitLab Pipelines wird Continuous Integration (CI) und Continuous Deployment (CD) realisiert. Dies bedeutet, dass Änderungen automatisch getestet und bei erfolgreicher Prüfung automatisch in die Produktion überführt werden.
 
-## Bash-Skripte für Automatisierung
+## 4.1.5 Bash-Skripte für Automatisierung
 
 Bash-Skripte werden in den GitLab Pipelines verwendet, um automatisierte Aufgaben wie das Deployment der Anwendung auf EC2-Instanzen durchzuführen. Diese Skripte ermöglichen eine effiziente Verwaltung und Automatisierung von Entwicklungs- und Bereitstellungsprozessen innerhalb der Projektumgebung.
 
-## Python für Backend-Logik und Datenverarbeitung
+## 4.1.6 Python für Backend-Logik und Datenverarbeitung
 
 Python wird für die Entwicklung der Backend-Logik verwendet. Dies umfasst die Implementierung von Geschäftslogik für Aufgabenverwaltung, Benutzerverwaltung und Authentifizierung. Python wird auch für Datenverarbeitungsaufgaben wie Validierungen von Benutzereingaben und die Verarbeitung von API-Anfragen eingesetzt.
 
-## REST API für Kommunikation
+## 4.1.7 REST API für Kommunikation
 
 Die Anwendung wird eine RESTful API bereitstellen, die es ermöglicht, über standardisierte HTTP-Methoden wie GET, POST, PUT und DELETE mit der Anwendung zu interagieren. Die API wird klare Endpunkte definieren, um Aufgaben zu verwalten, Benutzer zu authentifizieren und Daten zwischen dem Frontend und dem Backend auszutauschen. Die Kommunikation erfolgt dabei über JSON als primäres Datenformat.
 
-## Technologiebeschreibungen
+## 4.1.8 Technologiebeschreibungen
 
 - **API Flask:** Flask wird verwendet, um eine robuste RESTful API zu entwickeln, die die Hauptfunktionalitäten der Anwendung bereitstellt. Dazu gehören Endpunkte für die Verwaltung von Aufgaben und Benutzern.
 - **email_validator:** Ein Python-Paket zur Validierung von E-Mail-Adressen innerhalb der Benutzerverwaltung und Registrierungsprozesse.
@@ -84,7 +84,7 @@ Die Anwendung wird eine RESTful API bereitstellen, die es ermöglicht, über sta
 - **Flask-Migrate:** Eine Flask-Erweiterung für Datenbank-Migrationen, die hilft, Datenbankschemata einfach zu verwalten und zu aktualisieren, insbesondere während der Entwicklung und Skalierung der Anwendung.
 - **Beautiful Soup (bs4):** Eine Bibliothek für das Scraping von Informationen aus Webseiten, die zur Verarbeitung und Extraktion von Daten aus externen Quellen verwendet werden kann, um Inhalte oder Informationen zu analysieren.
 
-## Sicherheit und Datenschutz
+## 4.1.9 Sicherheit und Datenschutz
 
 Die gängigen Sicherheitskonzepte und Datenschutzrichtlinien müssen bei diesem Projekt auch umgesetzt werden.
 

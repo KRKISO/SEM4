@@ -5,7 +5,7 @@ parent: 4. DoItNow!
 nav_order: 5
 ---
 
-# ERD (Entity-Relationship Diagram)
+# 4.5 ERD (Entity-Relationship Diagram)
 
 Das folgende ERD (Entity-Relationship Diagram) zeigt die Beziehung zwischen den Hauptentitäten der "DoItNow"-Applikation:
 
@@ -26,7 +26,7 @@ Das folgende ERD (Entity-Relationship Diagram) zeigt die Beziehung zwischen den 
 
 Diese Struktur ermöglicht es, die Aufgaben in der Anwendung effektiv zu organisieren und zu verwalten, indem sie in benutzerdefinierte Listen gruppiert werden.
 
-## Entscheidung für MySQL
+## 4.6 Entscheidung für MySQL
 
 ### Warum MySQL?
 
