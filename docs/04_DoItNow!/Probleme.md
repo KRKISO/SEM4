@@ -1,11 +1,11 @@
 ---
 layout: default
-title: 4.9 Probleme bei der Umsetzung
+title: 4.9 Probleme
 parent: 4. DoItNow!
 nav_order: 9
 ---
 
-# 4.9 Probleme bei der Umsetzung
+# 4.9 Probleme
 Wie üblich bei einem Software Projekt, tauchen diverse Probleme bei der Umsetzung auf.
 Ich möchte folgend auf zwei spezifische Probleme eingehen.
 

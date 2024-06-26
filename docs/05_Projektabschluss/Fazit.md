@@ -5,7 +5,7 @@ parent: 5. Projektabschluss
 nav_order: 1
 ---
 
-## Fazit und Reflexion
+# Fazit und Reflexion
 Die Entwicklung der "DoItNow"-Applikation war ein aufwändiges und gleichzeitig sehr lehrreiches Projekt, das viele spannende Inhalte umfasste, darunter Microservices, Docker und APIFlask sowie das allgemeine Frontend-Design. Obwohl ich zuvor noch nie eine Fullstack-App entwickelt hatte, war die Arbeit mit JavaScript und HTML eine aufregende und bereichernde neue Erfahrung für mich.
 
 ## Erfahrungen und Erkenntnisse

@@ -5,7 +5,7 @@ parent: 4. DoItNow!
 nav_order: 5
 ---
 
-## ERD (Entity-Relationship Diagram)
+# ERD (Entity-Relationship Diagram)
 
 Das folgende ERD (Entity-Relationship Diagram) zeigt die Beziehung zwischen den Hauptentitäten der "DoItNow"-Applikation:
 

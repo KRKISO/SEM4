@@ -5,6 +5,6 @@ parent: 4. DoItNow!
 nav_order: 8
 ---
 
-## GitLab Projekt
+# GitLab Projekt
 
 Dieses Projekt wurde mit GitLab umgesetzt und kann [HIER](https://gitlab.com/it-cne23/doitnow/-/tree/main?ref_type=heads) eigesehen werden.

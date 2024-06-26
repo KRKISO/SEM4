@@ -5,17 +5,19 @@ parent: 2. Aufgabenstellung
 nav_order: 1
 ---
 
-###  Titel der Facharbeit
+# Aufgabenstellung
+
+##  Titel der Facharbeit
 DOITNOW!
 Entwicklung einer skalierbaren ToDo-Listen-Anwendung mit Microservices: Technologische Umsetzung und Dokumentation
 
-### Ausgangslage
+## Ausgangslage
 Die Entwicklung von Anwendungen mit Microservices-Architekturen gewinnt zunehmend an Bedeutung aufgrund ihrer Skalierbarkeit, Flexibilität und einfachen Wartbarkeit. Diese Arbeit beschäftigt sich mit der Konzeption und Umsetzung einer ToDo-Listen-Anwendung, die diese Vorteile nutzt.
 
-### Aufgabenstellung
+## Aufgabenstellung
 Entwicklung einer voll funktionsfähigen ToDo-Listen-Anwendung unter Verwendung einer Microservices-Architektur. Die Anwendung soll es Benutzern ermöglichen, Aufgaben zu verwalten, zu organisieren und abzuhaken. Es werden verschiedene Technologien wie AWS, Docker, Flask API, React und SQLalchemy integriert.
 
-### Ziele
+## Ziele
 - Implementierung einer skalierbaren Microservices-Architektur für die Anwendung
 - Bereitstellung einer benutzerfreundlichen Benutzeroberfläche mit React für das Frontend
 - Sicherstellung der Datenintegrität und Sicherheit durch Einsatz von SQLalchemy für die Datenbankverwaltung

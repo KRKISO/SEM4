@@ -6,7 +6,7 @@ grand_parent: 3. Projektorganisation
 nav_order: 1
 ---
 
-## Projekttreffen-Protokoll
+# Projekttreffen-Protokoll
 
 **Datum / Uhrzeit**: 16.06.2024
 **Ort**: Microsoft Teams  
