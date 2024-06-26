@@ -36,3 +36,7 @@ Da es sich um eine akademische Arbeit handelt und die Arbeit nicht in den Echtbe
 **Gesamtkosten: 3.060 CHF**
 
 Diese Kostenanalyse bietet eine Übersicht über die erwarteten Aufwände und ermöglicht eine gezielte Ressourcenplanung für das Projekt.
+
+## Unterhaltkosten
+Falls die Applikation Prodkitiv werden sollte, müsste hier noch eine Rechnung für die Unterhaltskosten errechnet werden. 
+Da ich allerdings keine abhängikeiten zu externen kostenpflichtigen Diensten habe, würden hier nur die Kosten zum Hosten der Applikation auftreten. 

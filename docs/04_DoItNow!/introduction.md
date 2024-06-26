@@ -84,3 +84,19 @@ Die Anwendung wird eine RESTful API bereitstellen, die es ermöglicht, über sta
 - **Flask-Migrate:** Eine Flask-Erweiterung für Datenbank-Migrationen, die hilft, Datenbankschemata einfach zu verwalten und zu aktualisieren, insbesondere während der Entwicklung und Skalierung der Anwendung.
 - **Beautiful Soup (bs4):** Eine Bibliothek für das Scraping von Informationen aus Webseiten, die zur Verarbeitung und Extraktion von Daten aus externen Quellen verwendet werden kann, um Inhalte oder Informationen zu analysieren.
 
+## Sicherheit und Datenschutz
+
+Die gängigen Sicherheitskonzepte und Datenschutzrichtlinien müssen bei diesem Projekt auch umgesetzt werden.
+
+### Sicherheit
+Da die Applikation nicht einer gewissen grösse entspricht, habe ich mich vorallem auf die Daten der Benutzer fokussiert.
+Aus diesem Grund müssen Passwörter gehasht werden, bevor diese in die Datenbank gespeichert werden. Dies verhindert bei einem Datenleck die klartext einsicht auf die Passwörter der Benutzer.
+
+Zudem müssten noch die Docker Instanzen auf mögliche Schwachstellen untersucht werden. Aufgrund der Schulung von Marcel Bernet würde ich, falls diese Applikation Produktiv verwendet wird, auf Podman wechseln.
+Ich gehe allerdings in diesem Projekt noch nicht auf diese Schwachstellen ein.
+
+### Datenschutz
+Um dem Datenschutz ansatz gerecht zu werden, werden nur die nötigsten Daten in der Datenbank gespeichert. 
+Aus diesem Grund habe ich mich bei der haltung der Nutzer Daten lediglich auf das minimum (Email/Hashed Passwort) beschränkt.
+
+Falls diese Applikation in den Produktiven zustand versetzt wird, müsste anhand der Datenschutzgesetzverordnung dem Benutzer noch die Möglichkeit zur löschung der Daten angeboten werden.

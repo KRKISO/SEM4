@@ -28,3 +28,6 @@ Benutzererfahrung bieten.
 ## Dokumente:
 
 - [Einreichungsformular Semesterarbeit](resources/artifacts/ITCNE23_Semesterarbeit 3 Einreichungsformular Marc Hofstetter.pdf)
+
+## Disclamer:
+Zur Entwicklung, sowie für die Dokumentation wurde CHAT-GPT als unterstützendes Tool um fehler im Code und generierung von Texten verwendet.

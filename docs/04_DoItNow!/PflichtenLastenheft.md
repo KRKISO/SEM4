@@ -34,7 +34,6 @@ nav_order: 2
 - **Sicherheit:** Daten müssen sicher gespeichert und verarbeitet werden, um Datenschutz und -sicherheit zu gewährleisten.
 - **Wartbarkeit:** Der Code soll gut strukturiert und dokumentiert sein, um eine einfache Wartung und Weiterentwicklung zu ermöglichen.
 
----
 
 # Lastenheft
 
