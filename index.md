@@ -12,14 +12,14 @@ Benutzern ermöglicht, ihre Aufgaben effizient zu verwalten und abzuschließen.
 Potential der Semesterarbeit: Die Entwicklung einer Microservices-Architektur ermöglicht es
 «DOITNOW!», flexibel auf zukünftige Anforderungen zu reagieren und die Anwendung bei Bedarf zu
 erweitern. Durch die Verwendung von Docker können die verschiedenen Komponenten der Anwendung
-isoliert und effizient bereitgestellt werden. Die Verwendung von Flask API für das Backend und React
+isoliert und effizient bereitgestellt werden. Die Verwendung von Flask API für das Backend und HTTP-Templates
 für das Frontend ermöglicht eine saubere Trennung von Backend- und Frontend-Logik, was die
 Wartbarkeit und Skalierbarkeit verbessert. Auch soll eine CI/CD Pipeline über GitLab erstellt werden,
 welche ein einfaches Entwickeln und Deployen der Applikation ermöglichen soll.
 
 ## Ziele:
 Entwicklung einer Microservices-Architektur unter Verwendung von AWS, Docker, Flask API für das
-Backend, React für das Frontend und SQLalchemy für die Datenbankverwaltung. Das Frontend soll
+Backend, HTTP-Templates für das Frontend und SQLalchemy für die Datenbankverwaltung. Das Frontend soll
 eine minimalistische Benutzeroberfläche bieten, auf der Benutzer Aufgaben hinzufügen, bearbeiten und
 abhaken können. Es wird eine Listenansicht mit Aufgaben und eine Möglichkeit zum Hinzufügen neuer
 Aufgaben geben. Die Anwendung soll intuitiv zu bedienen sein und eine reibungslose
