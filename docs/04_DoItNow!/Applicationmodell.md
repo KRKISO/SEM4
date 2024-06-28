@@ -22,19 +22,19 @@ Die folgende Abbildung zeigt die Architektur der "DoItNow"-Applikation:
 In der Abbildung sind die verschiedenen Komponenten und deren Interaktionen innerhalb der Applikation dargestellt:
 
 1. **Frontend**:
-   - **React App**: Das Frontend der Anwendung ist eine React-basierte Single Page Application (SPA), die die Benutzeroberfläche bereitstellt und mit den Backend-APIs kommuniziert.
+   - **HTTP Templates**: Das Frontend der Anwendung sind mehrere HTTP Templates, welche dem Benutzer eine grafische Web Oberfläche bietet.
    - **Interaktionen**: Benutzer interagieren über das Frontend, indem sie Aufgaben erstellen, bearbeiten, löschen und anzeigen.
 
 2. **Backend**:
-   - **Auth API**: Ein Microservice, der für die Benutzerverwaltung, Registrierung und Authentifizierung zuständig ist.
-   - **Tasks API**: Ein Microservice, der die Aufgabenverwaltung übernimmt, einschließlich Erstellen, Bearbeiten, Löschen und Abrufen von Aufgaben.
+   - **Auth API**: Ist für die Benutzerverwaltung, Registrierung und Authentifizierung zuständig.
+   - **Tasks API**: Übernimmt die Aufgabenverwaltung , einschließlich Erstellen, Bearbeiten, Löschen und Abrufen von Aufgaben.
    - **Notifications API**: Ein Microservice, der Benachrichtigungen basierend auf bestimmten Ereignissen, wie z.B. fälligen Aufgaben, an Benutzer sendet.
 
 3. **Datenbank**:
    - **MySQL Database**: Eine relationale Datenbank, die Benutzer- und Aufgabeninformationen speichert. Jeder Microservice greift auf die Datenbank zu, um die entsprechenden Daten zu speichern oder abzurufen.
 
 4. **Cloud Hosting**:
-   - **AWS**: Die Applikation wird auf Amazon Web Services (AWS) gehostet. Die verschiedenen Microservices laufen auf EC2-Instanzen, und die MySQL-Datenbank wird über AWS RDS verwaltet.
+   - **AWS**: Die Applikation wird auf Amazon Web Services (AWS) gehostet. Die verschiedenen Microservices laufen auf EC2-Instanzen.
 
 ### Diagramm: Datenfluss in der Anwendung
 

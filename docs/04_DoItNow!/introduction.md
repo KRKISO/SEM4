@@ -39,12 +39,11 @@ Ein typisches Beispiel für die Funktionsweise von Microservices kann wie folgt 
 In diesem Projekt zur Entwicklung einer ToDo-Listen-Anwendung werden die Microservices wie folgt eingesetzt:
 
 1. **Backend-Architektur**:
-   - **Benutzer-Microservice**: Verwalten von Benutzerinformationen, Registrierungen und Authentifizierungen.
-   - **Aufgaben-Microservice**: Verwalten der Benutzeraufgaben, einschließlich der Funktionen zum Erstellen, Bearbeiten, Löschen und Abrufen von Aufgaben.
-   - **Benachrichtigungs-Microservice**: Senden von E-Mails und Benachrichtigungen an Benutzer, z.B. Bestätigungen oder Erinnerungen.
+   - **Benutzer-API**: Verwalten von Benutzerinformationen, Registrierungen und Authentifizierungen.
+   - **Aufgaben-API**: Verwalten der Benutzeraufgaben, einschließlich der Funktionen zum Erstellen, Bearbeiten, Löschen und Abrufen von Aufgaben.
    
 2. **Kommunikation zwischen Diensten**:
-   - Die Dienste kommunizieren über RESTful APIs. Zum Beispiel könnte der Aufgaben-Microservice die Benutzer-API aufrufen, um sicherzustellen, dass der Benutzer authentifiziert ist, bevor Aufgabeninformationen bereitgestellt werden.
+   - Die Dienste kommunizieren über RESTful APIs.
    
 3. **Deployment und Management**:
    - Jeder Microservice wird in einem Docker-Container ausgeführt und auf AWS EC2-Instanzen bereitgestellt. Die Verwaltung und Orchestrierung dieser Container wird durch AWS-Dienste unterstützt, die eine einfache Skalierung und Wartung ermöglichen.
