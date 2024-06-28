@@ -11,7 +11,7 @@ Da es sich um eine akademische Arbeit handelt und die Arbeit nicht in den Echtbe
 
 - **Entwicklungskosten**:
   - Backend-Entwicklung mit Flask: 15 Stunden x 50 CHF/Stunde = 750 CHF
-  - Frontend-Entwicklung mit React: 20 Stunden x 50 CHF/Stunde = 1.000 CHF
+  - Frontend-Entwicklung mit HTTP-Templates: 20 Stunden x 50 CHF/Stunde = 1.000 CHF
   - Integration und Testing der Microservices: 10 Stunden x 50 CHF/Stunde = 500 CHF
 
 - **Infrastrukturkosten**:
@@ -28,7 +28,7 @@ Da es sich um eine akademische Arbeit handelt und die Arbeit nicht in den Echtbe
   - GitHub Packages für Container-Images: 5 CHF/Monat x 3 Monate = 15 CHF
 
 - **Schulungskosten**:
-  - Einarbeitung in React und CI/CD-Management: 5 Stunden x 50 CHF/Stunde = 250 CHF
+  - Einarbeitung in mit HTTP-Templates und CI/CD-Management: 5 Stunden x 50 CHF/Stunde = 250 CHF
 
 - **Risiken und Unvorhergesehenes**:
   - Budgetreserve für technische Herausforderungen und Anpassungen: 100 CHF

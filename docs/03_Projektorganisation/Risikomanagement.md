@@ -35,7 +35,7 @@ Die Risiken werden nach ihrer Eintrittswahrscheinlichkeit und möglichen Auswirk
 
 Neben den allgemeinen Risiken gibt es spezifische Herausforderungen in diesem Projekt:
 
-- **Technische Kompetenzlücken**: Da ich kein Fullstack-Entwickler bin, könnte es Schwierigkeiten geben, ein reibungslos funktionierendes Frontend zu entwickeln. Besonders Herausforderungen könnten bei der Arbeit mit React auftreten, was den Entwicklungsprozess verzögern könnte.
+- **Technische Kompetenzlücken**: Da ich kein Fullstack-Entwickler bin, könnte es Schwierigkeiten geben, ein reibungslos funktionierendes Frontend zu entwickeln.
 - **Zeitdruck**: Das Projekt muss bis zum 05.07.2024 abgeschlossen sein. Dieser enge Zeitrahmen kann den Druck erhöhen und möglicherweise die Qualität der Arbeit beeinträchtigen.
 
 ## 3.6.3 Risikomanagement-Prozess

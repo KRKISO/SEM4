@@ -48,7 +48,7 @@ Die Hauptdatenflüsse innerhalb der "DoItNow"-Applikation umfassen die Benutzeri
 
 ### Benutzerregistrierung und -anmeldung
 
-- Benutzer interagieren mit der React-App im Frontend, um sich zu registrieren oder anzumelden.
+- Benutzer interagieren mit den HTTP-Templates im Frontend, um sich zu registrieren oder anzumelden.
 - Diese Anfragen werden an die **Auth API** gesendet, die die Benutzerdaten validiert und in der MySQL-Datenbank speichert.
 - Nach erfolgreicher Anmeldung wird eine **Session** erstellt und verwaltet, die bei zukünftigen Anfragen zur Authentifizierung dient.
 
