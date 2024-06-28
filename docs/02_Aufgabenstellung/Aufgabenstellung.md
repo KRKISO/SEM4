@@ -15,11 +15,11 @@ Entwicklung einer skalierbaren ToDo-Listen-Anwendung mit Microservices: Technolo
 Die Entwicklung von Anwendungen mit Microservices-Architekturen gewinnt zunehmend an Bedeutung aufgrund ihrer Skalierbarkeit, Flexibilität und einfachen Wartbarkeit. Diese Arbeit beschäftigt sich mit der Konzeption und Umsetzung einer ToDo-Listen-Anwendung, die diese Vorteile nutzt.
 
 ## Aufgabenstellung
-Entwicklung einer voll funktionsfähigen ToDo-Listen-Anwendung unter Verwendung einer Microservices-Architektur. Die Anwendung soll es Benutzern ermöglichen, Aufgaben zu verwalten, zu organisieren und abzuhaken. Es werden verschiedene Technologien wie AWS, Docker, Flask API, React und SQLalchemy integriert.
+Entwicklung einer voll funktionsfähigen ToDo-Listen-Anwendung unter Verwendung einer Microservices-Architektur. Die Anwendung soll es Benutzern ermöglichen, Aufgaben zu verwalten, zu organisieren und abzuhaken. Es werden verschiedene Technologien wie AWS, Docker, Flask API, HTTP-Templates und SQLalchemy integriert.
 
 ## Ziele
 - Implementierung einer skalierbaren Microservices-Architektur für die Anwendung
-- Bereitstellung einer benutzerfreundlichen Benutzeroberfläche mit React für das Frontend
+- Bereitstellung einer benutzerfreundlichen Benutzeroberfläche mit HTTP-Templates für das Frontend
 - Sicherstellung der Datenintegrität und Sicherheit durch Einsatz von SQLalchemy für die Datenbankverwaltung
 - Erstellung einer umfassenden technischen Dokumentation, die die Architektur, Implementierung und Einsatzmöglichkeiten der Anwendung beschreibt
 
