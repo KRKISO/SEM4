@@ -35,8 +35,8 @@ Entwicklung einer voll funktionsfähigen ToDo-Listen-Anwendung unter Verwendung 
    - Integration von SQLalchemy zur Datenbankverwaltung
 
 3. **Frontend-Entwicklung**
-   - Design und Entwicklung einer benutzerfreundlichen React-Oberfläche
-   - Implementierung von Funktionen zum Anzeigen, Hinzufügen, Bearbeiten und Löschen von Aufgaben
+   - Design und Entwicklung einer benutzerfreundlichen oberfläche mit HTTP Templates.
+   - Implementierung von Funktionen zum Anzeigen, Hinzufügen und Löschen von Aufgaben
 
 4. **Dokumentation**
    - Erstellung einer detaillierten technischen Dokumentation
