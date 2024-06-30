@@ -1,60 +1,53 @@
 ---
 layout: default
-title: 3.8.1 Sprint Planning 
-parent: 3.8 Sprint 02
+title: 3.7.1 Sprint Planning 
+parent: 3.7 Sprint 01
 grand_parent: 3. Projektorganisation
 nav_order: 1
 ---
 
 # Projekttreffen-Protokoll
 
-**Datum / Uhrzeit**: 16.06.2024
+**Datum / Uhrzeit**: 30.06.2024
 **Ort**: Microsoft Teams  
 **Teilnehmer**: 
 - Student: Marc Hofstetter
-- MSVC SME: Boris Langer
-- P0/SME  : Philipp Rohr
-
-Aufgrund der aktuellen ereignisse konnten die PO und SME nicht teilnehmen. Es gab jedoch ausserordentliche Abklärungen.
+- Stzdent (Projektbegleitung): Noel Edattale
 
 ### Aktueller Fortschritt in Prozent
 
-- **Dokumentation**: 0%
-- **Umsetzung**: 90%
-- **Präsentation**: 0%
+- **Dokumentation**: 100%
+- **Umsetzung**: 100%
+- **Präsentation**: 60%
+
+### Aktueller Zeitplan
+
+![Sprint1Zeitplan](../../../resources/images/Sprint2Zeitplan.PNG)
 
 ### Aktueller Entwicklungsstand
 
-- **Erstellung der Container**: Die Container konnten erfolgreich erstellt werden. (Reverse Proxy, MySQL und Applikation (Fronend/API))
-- **API Erstellung**: Die API konnte erfolgreich erstellt werden.
-- **API Integration**: Die API konnte erfolgreich in das Fronend integriert werden.
-- **Dokumentation**: Die eigentliche Dokumentation zur Arbeit ist bisher noch offen.
-- **Frage an die Experten**: Termin 17.06. mit dem SME Boris Langer um die Applikation zu reviewen
-- **Präsentation**: Die Präsentation wurde bisher noch nicht erstellt.
+- **Dokumentation**: Die eigentliche Dokumentation zur Arbeit ist mit diesem Sprint abgeschlossen worden.
+- **Präsentation**: Die Präsentation wurde bisher nicht erstellt. Es sind jedoch die nötigen Tasks in bearbeitung. 
 
 ### Vergleich zu den Projektzielen
 
-- **Projektziele**: Sind aktuell nicht gefährdet.
+- **Projektziele**: Sind nicht gefährdet.
 
 ### Keep / Try / Drop
 
 - **Keep**: 
-- **Try**: Die Priorisierung des Projekts steht jetzt an oberster Stelle.
+- **Try**: Die Priorisierung der Präsentation steht jetzt an oberster Stelle. 
 - **Drop**: Keine
 
 ### To Do
 
-- **CSS**: CSS der Applikation noch weiter verschönern.
-- **Dokumentation**: Dokumentation beginnnen
 - **Präsentation**: Präsentation erstellen
+
+![Sprint2Kanban](../../../resources/images/Sprint2Kanban.PNG)
 
 ### Aufgetretene Probleme
 
-- **Zeitmanagement**: Es gab keine größeren Probleme, abgesehen von Herausforderungen im Zeitmanagement.
-
-### Durchgeführte Tests
-
-- **PYTEST Testing**: Es wurden diverse Testcases in der Applikation geschrieben und erfolgreich integriert.
+- **Zeitmanagement**: Es gab keine größeren Probleme, abgesehen von Herausforderungen im Zeitmanagement. Ich bin jedoch sehr gut und ich sehe hier kein Risiko.
 
 ### Backlog
 

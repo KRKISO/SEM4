@@ -51,7 +51,7 @@ Aufgrund der aktuellen ereignisse konnten die PO und SME nicht teilnehmen. Es ga
 - **Dokumentation**: Dokumentation fortsetzen
 - **Präsentation**: Präsentation erstellen
 
-![Sprint2Kanban](../../../resources/images/Sprint2Kanban.PNG)
+![Sprint2Kanban](../../../resources/images/Sprint1Kanban.PNG)
 
 ### Aufgetretene Probleme
 
