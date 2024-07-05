@@ -2,7 +2,7 @@
 layout: default
 title: 4.10 Application Layout
 parent: 4. DoItNow!
-nav_order: 4
+nav_order: 10
 ---
 
 # 4.10 Application Layout
