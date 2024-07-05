@@ -63,4 +63,20 @@ Diese Reflexion hilft dabei, kontinuierlich zu lernen und die Arbeitsweise anzup
 
 Kanban wird genutzt, um den Arbeitsfluss kontinuierlich zu überwachen und Engpässe zu identifizieren. In Jira wird eine Kanban-Tafel eingerichtet, die den aktuellen Status aller Aufgaben visuell darstellt und hilft, Prioritäten zu setzen.
 
-Durch die Kombination von Scrum und Kanban, unterstützt durch Jira, wird das Projekt effizient und flexibel verwaltet.
+## Warum Lean-Ansatz sinnvoll wäre
+
+Der Lean-Ansatz zielt darauf ab, Effizienz zu maximieren und Verschwendung zu minimieren. Dies wird durch kontinuierliche Verbesserung und die Konzentration auf den Wert für den Kunden erreicht. In der Praxis könnte der Lean-Ansatz in diesem Projekt folgende Vorteile bieten:
+
+- **Fokussierung auf Wertschöpfung**: Nur Aufgaben, die direkten Nutzen für den Benutzer bieten, werden priorisiert und umgesetzt.
+- **Reduzierung von Verschwendung**: Überflüssige Funktionen und Prozesse werden vermieden, was zu einer schlankeren und effizienteren Projektabwicklung führt.
+- **Schnelle Anpassung**: Durch kontinuierliches Feedback und iterative Verbesserungen kann das Projekt flexibel auf Veränderungen reagieren und sich ständig weiterentwickeln.
+
+## Warum trotzdem Scrum verwendet wird
+
+Trotz der Vorteile des Lean-Ansatzes wird in diesem Projekt Scrum verwendet, hauptsächlich aus Lernzwecken:
+
+- **Strukturierte Lernumgebung**: Scrum bietet eine klar strukturierte Methode mit definierten Rollen, Ereignissen und Artefakten, die eine gute Grundlage für das Lernen und Verstehen agiler Prinzipien bietet.
+- **Zyklus-basierte Iterationen**: Die festen Zeiträume der Sprints in Scrum helfen dabei, den Fortschritt regelmäßig zu überprüfen und sicherzustellen, dass das Projekt in kleinen, handhabbaren Schritten voranschreitet.
+- **Erfahrung mit agilen Praktiken**: Durch die Anwendung von Scrum können praktische Erfahrungen mit agilen Praktiken gesammelt werden, die in zukünftigen Projekten wertvoll sein können.
+
+Durch die Kombination von Scrum und Kanban, unterstützt durch Jira, wird das Projekt effizient und flexibel verwaltet, während gleichzeitig wertvolle Kenntnisse und Fähigkeiten im Bereich agiler Methoden erworben werden.

@@ -7,6 +7,21 @@ nav_order: 1
 
 # 4.1 Projektumsetzung und Technologieeinsatz
 
+## 4.1.1 Projektübersicht
+
+### Einführung in das Projekt
+
+Das Projekt «DOITNOW!» zielt darauf ab, eine minimalistische ToDo-Listen-Anwendung zu entwickeln, die es Benutzern ermöglicht, ihre Aufgaben effizient zu verwalten und abzuschließen. Viele vorhandene ToDo-Listen-Anwendungen sind überladen mit Funktionen, die nicht immer notwendig sind. Im Gegensatz dazu konzentriert sich «DOITNOW!» auf das Wesentliche, um eine intuitive und benutzerfreundliche Erfahrung zu bieten.
+
+### Zielsetzung
+
+Die Hauptziele des Projekts sind:
+- **Minimalistische Benutzeroberfläche**: Eine einfache und intuitive Oberfläche, auf der Benutzer Aufgaben hinzufügen, bearbeiten und abhaken können.
+- **Microservices-Architektur**: Flexibilität und Erweiterbarkeit durch eine modulare Architektur, bei der einzelne Komponenten der Anwendung unabhängig entwickelt und skaliert werden können.
+- **Skalierbarkeit und Wartbarkeit**: Nutzung von Docker für die Containerisierung und AWS für das Hosting, um eine skalierbare und leicht wartbare Umgebung zu schaffen.
+- **Trennung von Backend und Frontend**: Verwendung von Flask API für das Backend und HTTP-Templates für das Frontend, um eine klare Trennung der Logik zu gewährleisten.
+- **Automatisierte CI/CD Pipeline**: Implementierung einer Continuous Integration und Continuous Deployment Pipeline mit GitLab, um den Entwicklungs- und Bereitstellungsprozess zu optimieren.
+
 ## 4.1.2 Microservices-Prinzip
 
 ### Was sind Microservices?
@@ -20,11 +35,8 @@ In einer Microservices-Architektur ist jeder Dienst für einen klar definierten 
 Ein typisches Beispiel für die Funktionsweise von Microservices kann wie folgt aussehen:
 
 1. **Benutzerverwaltung**: Ein eigener Microservice kümmert sich um die Registrierung, Authentifizierung und Verwaltung von Benutzerdaten. Dieser Dienst speichert Benutzerinformationen und stellt APIs für die Interaktion mit diesen Daten bereit.
-
 2. **Aufgabenverwaltung**: Ein weiterer Microservice verwaltet die Aufgaben des Benutzers. Er bietet Funktionen zum Erstellen, Bearbeiten, Löschen und Abrufen von Aufgaben. Dieser Dienst kann auch Benachrichtigungen oder Erinnerungen bereitstellen.
-
 3. **Benachrichtigungsdienst**: Ein separater Dienst könnte Benachrichtigungen und E-Mails an Benutzer senden, z.B. Erinnerungen an fällige Aufgaben oder Willkommensnachrichten nach der Registrierung.
-
 4. **Kommunikation**: Die Dienste kommunizieren über definierte APIs miteinander. Zum Beispiel könnte der Benutzerdienst Anfragen vom Aufgabenverwaltungsdienst erhalten, um sicherzustellen, dass der Benutzer authentifiziert ist, bevor Aufgabeninformationen bereitgestellt werden.
 
 ### Vorteile der Microservices-Architektur
@@ -85,17 +97,14 @@ Die Anwendung wird eine RESTful API bereitstellen, die es ermöglicht, über sta
 
 ## 4.1.9 Sicherheit und Datenschutz
 
-Die gängigen Sicherheitskonzepte und Datenschutzrichtlinien müssen bei diesem Projekt auch umgesetzt werden.
-
 ### Sicherheit
-Da die Applikation nicht einer gewissen grösse entspricht, habe ich mich vorallem auf die Daten der Benutzer fokussiert.
-Aus diesem Grund müssen Passwörter gehasht werden, bevor diese in die Datenbank gespeichert werden. Dies verhindert bei einem Datenleck die klartext einsicht auf die Passwörter der Benutzer.
 
-Zudem müssten noch die Docker Instanzen auf mögliche Schwachstellen untersucht werden. Aufgrund der Schulung von Marcel Bernet würde ich, falls diese Applikation Produktiv verwendet wird, auf Podman wechseln.
-Ich gehe allerdings in diesem Projekt noch nicht auf diese Schwachstellen ein.
+Da die Applikation nicht einer gewissen Größe entspricht, liegt der Fokus vor allem auf den Daten der Benutzer. Aus diesem Grund müssen Passwörter gehasht werden, bevor sie in die Datenbank gespeichert werden. Dies verhindert, dass bei einem Datenleck Passwörter im Klartext eingesehen werden können.
+
+Zusätzlich müssen die Docker-Instanzen auf mögliche Schwachstellen untersucht werden. Aufgrund der Schulung von Marcel Bernet würde ich, falls diese Applikation produktiv verwendet wird, auf Podman wechseln. In diesem Projekt gehe ich jedoch noch nicht auf diese Schwachstellen ein.
 
 ### Datenschutz
-Um dem Datenschutz ansatz gerecht zu werden, werden nur die nötigsten Daten in der Datenbank gespeichert. 
-Aus diesem Grund habe ich mich bei der haltung der Nutzer Daten lediglich auf das minimum (Email/Hashed Passwort) beschränkt.
 
-Falls diese Applikation in den Produktiven zustand versetzt wird, müsste anhand der Datenschutzgesetzverordnung dem Benutzer noch die Möglichkeit zur löschung der Daten angeboten werden.
+Um den Datenschutzanforderungen gerecht zu werden, werden nur die nötigsten Daten in der Datenbank gespeichert. Aus diesem Grund beschränkt sich die Speicherung der Nutzerdaten auf das Minimum (E-Mail/Hashed Passwort).
+
+Falls diese Applikation in den produktiven Zustand versetzt wird, muss anhand der Datenschutzgesetzverordnung dem Benutzer noch die Möglichkeit zur Löschung der Daten angeboten werden.
