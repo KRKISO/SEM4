@@ -1,10 +1,10 @@
-title: Semsterarbeit 03 "DOITNOW!"
-description: "DOITNOW!"
+title: Semsterarbeit 04!"
+description: "Kubernetes und CI/CD!"
 remote_theme: just-the-docs/just-the-docs
 
-url: https://krkiso.github.io/DOITNOW/
+url: https://krkiso.github.io/SEM4/
 
 aux_links:
-  JIRA Projekt: https://marconline99.atlassian.net/jira/software/projects/DOIT/boards/34/timeline
+  JIRA Projekt: https://sem4-mh.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline
 
-footer_content: "2024 Marc Hofstetter Sem03 für Technische Berufsschule Zürich, Lehrgang Cloud Native Engineer"
+footer_content: "2024 Marc Hofstetter Sem04 für Technische Berufsschule Zürich, Lehrgang Cloud Native Engineer"
