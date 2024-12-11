@@ -21,7 +21,7 @@ Die Aufgaben des Scrum Masters ist es das Agile Team zu führen und vertritt die
 
 ## SME (Subject Matter Expert)
 
-Der SME ist der Experte, welcher das Projekt durch ein breites Fachwissen unterstützt.
+Der SME ist der Experte, welcher das Projekt durch ein breites Fachwissen unterstützt. In diesem Fall ist dies Philipp Stark für Kubernetes und Philipp Rohr für Projektmanagement
 
 ## BO (Business Owner & Stakeholder)
 

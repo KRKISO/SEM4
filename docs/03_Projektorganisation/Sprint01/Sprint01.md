@@ -8,11 +8,11 @@ nav_order: 1
 
 # Sprint1-Protokoll
 
-**Datum / Uhrzeit**: 16.06.2024
+**Datum / Uhrzeit**: 11.12.2024
 **Ort**: Microsoft Teams  
 **Teilnehmer**: 
 - Student: Marc Hofstetter
-- MSVC SME: Boris Langer
+- CNC SME: Philipp Stark
 - P0/SME  : Philipp Rohr
 
 Aufgrund der aktuellen ereignisse konnten die PO und SME nicht teilnehmen. Es gab jedoch ausserordentliche Abklärungen.
@@ -29,11 +29,10 @@ Aufgrund der aktuellen ereignisse konnten die PO und SME nicht teilnehmen. Es ga
 
 ### Aktueller Entwicklungsstand
 
-- **Erstellung der Container**: Die Container konnten erfolgreich erstellt werden. (Reverse Proxy, MySQL und Applikation (Fronend/API))
-- **API Erstellung**: Die API konnte erfolgreich erstellt werden.
-- **API Integration**: Die API konnte erfolgreich in das Fronend integriert werden.
+- **Erstellung des Kubernetes Clusters**: Der K8s Cluster konnte erfolgreich erstellt werden.
+- **Azure Devops Pipeline**: Die Pipeline erstellt erfolgreich das Image und Deployed dies entsprechend auf dem K8s Cluster.
 - **Dokumentation**: Die eigentliche Dokumentation zur Arbeit ist bisher noch offen.
-- **Frage an die Experten**: Termin 17.06. mit dem SME Boris Langer um die Applikation zu reviewen (Sprint02)
+- **Frage an die Experten**: Keine.
 - **Präsentation**: Die Präsentation wurde bisher noch nicht erstellt.
 
 ### Vergleich zu den Projektzielen
@@ -56,10 +55,6 @@ Aufgrund der aktuellen ereignisse konnten die PO und SME nicht teilnehmen. Es ga
 ### Aufgetretene Probleme
 
 - **Zeitmanagement**: Es gab keine größeren Probleme, abgesehen von Herausforderungen im Zeitmanagement.
-
-### Durchgeführte Tests
-
-- **PYTEST Testing**: Es wurden diverse Testcases in der Applikation geschrieben und erfolgreich integriert.
 
 ### Backlog
 

@@ -8,46 +8,42 @@ nav_order: 1
 
 # Sprint2-Protokoll
 
-**Datum / Uhrzeit**: 30.06.2024
+**Datum / Uhrzeit**: XXXXXXXX
 **Ort**: Microsoft Teams  
 **Teilnehmer**: 
 - Student: Marc Hofstetter
-- Stzdent (Projektbegleitung): Noel Edattale
 
 ### Aktueller Fortschritt in Prozent
 
-- **Dokumentation**: 100%
-- **Umsetzung**: 100%
-- **Präsentation**: 60%
+- **Dokumentation**: XXX%
+- **Umsetzung**: XXX%
+- **Präsentation**: XXX%
 
 ### Aktueller Zeitplan
 
-![Sprint1Zeitplan](../../../resources/images/Sprint2Zeitplan.PNG)
 
 ### Aktueller Entwicklungsstand
 
-- **Dokumentation**: Die eigentliche Dokumentation zur Arbeit ist mit diesem Sprint abgeschlossen worden.
-- **Präsentation**: Die Präsentation wurde bisher nicht erstellt. Es sind jedoch die nötigen Tasks in bearbeitung. 
+- **Dokumentation**:
+- **Präsentation**:
 
 ### Vergleich zu den Projektzielen
 
-- **Projektziele**: Sind nicht gefährdet.
+- **Projektziele**:
 
 ### Keep / Try / Drop
 
 - **Keep**: 
-- **Try**: Die Priorisierung der Präsentation steht jetzt an oberster Stelle. 
-- **Drop**: Keine
+- **Try**:.
+- **Drop**:
 
 ### To Do
 
-- **Präsentation**: Präsentation erstellen
-
-![Sprint2Kanban](../../../resources/images/Sprint2Kanban.PNG)
+- **Präsentation**:
 
 ### Aufgetretene Probleme
 
-- **Zeitmanagement**: Es gab keine größeren Probleme, abgesehen von Herausforderungen im Zeitmanagement. Ich bin jedoch sehr gut und ich sehe hier kein Risiko.
+- **Zeitmanagement**:
 
 ### Backlog
 
