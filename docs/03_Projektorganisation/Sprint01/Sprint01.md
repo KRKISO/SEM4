@@ -13,7 +13,7 @@ nav_order: 1
 **Teilnehmer**: 
 - Student: Marc Hofstetter
 - CNC SME: Philipp Stark
-- P0/SME  : Philipp Rohr
+- PO/SME  : Philipp Rohr
 
 Aufgrund der aktuellen ereignisse konnten die PO und SME nicht teilnehmen. Es gab jedoch ausserordentliche Abklärungen.
 
