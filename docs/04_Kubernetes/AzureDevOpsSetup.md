@@ -108,30 +108,32 @@ Ein Azure DevOps Agent ist erforderlich, um CI/CD-Pipelines auszuführen. Ich ha
 
 2. **ServiceAccount für Azure DevOps einrichten:**
    - Ich habe eine YAML-Datei erstellt, um einen ServiceAccount und die zugehörige ClusterRoleBinding zu konfigurieren:
-     ```yaml
-     apiVersion: v1
-     kind: ServiceAccount
-     metadata:
-       name: azure-devops-sa
-       namespace: default
-     ---
-     kind: ClusterRoleBinding
-     apiVersion: rbac.authorization.k8s.io/v1
-     metadata:
-       name: azure-devops-rolebinding
-     subjects:
-       - kind: ServiceAccount
-         name: azure-devops-sa
-         namespace: default
-     roleRef:
-       kind: ClusterRole
-       name: cluster-admin
-       apiGroup: rbac.authorization.k8s.io
-     ```
+
+```yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+name: azure-devops-sa
+namespace: default
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+name: azure-devops-rolebinding
+subjects:
+- kind: ServiceAccount
+    name: azure-devops-sa
+    namespace: default
+roleRef:
+kind: ClusterRole
+name: cluster-admin
+apiGroup: rbac.authorization.k8s.io
+```
+
    - Ich habe die Datei mit folgendem Befehl angewendet:
-     ```bash
-     kubectl apply -f azure-devops-sa.yaml
-     ```
+```bash
+kubectl apply -f azure-devops-sa.yaml
+```
 
 3. **Abrufen des Service-Account-Tokens:**
    - Um das ServiceAccount-Token zu erhalten, habe ich den folgenden Befehl ausgeführt:
@@ -145,24 +147,23 @@ Ein Azure DevOps Agent ist erforderlich, um CI/CD-Pipelines auszuführen. Ich ha
 
 5. **ImagePull-Test:**
    - Ich habe einen Test-Pod erstellt, um sicherzustellen, dass Kubernetes das Docker-Image aus dem ACR ziehen kann:
-     ```yaml
-     apiVersion: v1
-     kind: Pod
-     metadata:
-       name: test-pod
-     spec:
-       containers:
-       - name: nginx
-         image: sem4acr.azurecr.io/nginx:latest
-       imagePullSecrets:
-       - name: acr-secret
-     ```
-     ```bash
-     kubectl apply -f test-pod.yaml
-     kubectl describe pod test-pod
-     ```
 
----
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+name: test-pod
+spec:
+containers:
+- name: nginx
+    image: sem4acr.azurecr.io/nginx:latest
+imagePullSecrets:
+- name: acr-secret
+```
+```bash
+kubectl apply -f test-pod.yaml
+kubectl describe pod test-pod
+```
 
 ## 4. CI/CD-Pipeline Beschreibung
 
@@ -229,8 +230,7 @@ stages:
         kubectl apply -f kubernetes/nginx_service.yaml
         kubectl apply -f kubernetes/metrics_service.yaml
       displayName: Apply Kubernetes Manifests
-
----
+```
 
 ## 5. Zusätzliche Dateien
 
@@ -317,7 +317,7 @@ COPY ./html /usr/share/nginx/html
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 ```
 
-### 4. `html/index.html`
+### 4. NGINX HTML Datei `html/index.html`
 
 Eine Beispiel-HTML-Datei.
 
@@ -375,7 +375,7 @@ Eine Beispiel-HTML-Datei.
 </html>
 ```
 
-### 4. `nginx/nginx.conf`
+### 4. NGINX Konfigurations Datei `nginx/nginx.conf`
 
 ```
 worker_processes  1;

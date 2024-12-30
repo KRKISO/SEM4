@@ -1,8 +1,7 @@
 ---
 layout: default
-title: 4.6 Horizontaler Autoscaler
+title: 4.7 Horizontaler Autoscaler
 parent: 4. Kubernetes und DevOps
-nav_order: 6
+nav_order: 7
 ---
 
-# 4.3 Fiktive Kostenanalyse für die Semesterarbeit
