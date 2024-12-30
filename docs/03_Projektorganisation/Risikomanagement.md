@@ -35,8 +35,8 @@ Die Risiken werden nach ihrer Eintrittswahrscheinlichkeit und möglichen Auswirk
 
 Neben den allgemeinen Risiken gibt es spezifische Herausforderungen in diesem Projekt:
 
-- **Technische Kompetenzlücken**: Da ich kein Fullstack-Entwickler bin, könnte es Schwierigkeiten geben, ein reibungslos funktionierendes Frontend zu entwickeln.
-- **Zeitdruck**: Das Projekt muss bis zum 05.07.2024 abgeschlossen sein. Dieser enge Zeitrahmen kann den Druck erhöhen und möglicherweise die Qualität der Arbeit beeinträchtigen.
+- **Technische Kompetenzlücken**: Da ich zum ersten mal mit Azure DevOps arbeite, kann es durch Wissenslücken zu verzögerungen im Projekt kommen.
+- **Zeitdruck**: Das Projekt muss bis zum 21.01.2025 abgeschlossen sein. Dieser enge Zeitrahmen kann den Druck erhöhen und möglicherweise die Qualität der Arbeit beeinträchtigen.
 
 ## 3.6.3 Risikomanagement-Prozess
 

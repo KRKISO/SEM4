@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 4.2 Pflichten und Lastenheft
-parent: 4. Kubernetes
+parent: 4. Kubernetes und DevOps
 nav_order: 2
 ---
 

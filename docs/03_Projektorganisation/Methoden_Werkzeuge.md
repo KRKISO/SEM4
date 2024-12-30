@@ -15,9 +15,9 @@ Jira ermöglicht es Struktur in das Projekt zu bringen. Es wird ein Scrum/Kanban
 
 SprintBoards/Kanban besteht aus sogenannten Statis. Diese Statis wurden wie folgt festgelgegt:
 
-| **Todo**                                            | **in Bearbeitung**      | **Validieren**                       | **Abgeschlossen**      |  
-| --------------------------------------------------- | ----------------------- | ------------------------------------ | ---------------------- |
-| Offene Tasks, welche noch bearbeitet werden müssen. | Task in bearbeitung.    | Task wird validiert und Kontrolliert | Task ist Abgeschlossen |
+| **Aufgaben**                                        | **in Arbeit**           | **Fertig**             |  
+| --------------------------------------------------- | ----------------------- | ---------------------- |
+| Offene Tasks, welche noch bearbeitet werden müssen. | Task in bearbeitung.    | Task ist Abgeschlossen |
 
 ### Tasks
 
@@ -46,6 +46,5 @@ Mit [GitHub Pages](https://pages.github.com/) kann diese Arbeit als statische We
 
 ## 3.4.3 GitLab Repository
 
-Das eigentliche Projekt wird in einem GitLab Repository umgesetzt aufgrund der bisherigen Erfahrung mit GitLab. 
-
-[GitLab DOITNOW! Projekt](https://gitlab.com/it-cne23/doitnow)
+Das eigentliche Projekt wird in einem DevOps Repository umgesetzt. Dies ist für mich eine neue und unbekannte Entwickler Platform. 
+Leider ist es nicht möglich, das Projekt zu veröffentlichen wie bei GitLab/GitHub. Aus diesem Grund werde ich die Pipeline Files in der Dokumentation zur Verfügung stellen.

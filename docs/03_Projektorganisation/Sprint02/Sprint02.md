@@ -6,44 +6,57 @@ grand_parent: 3. Projektorganisation
 nav_order: 1
 ---
 
-# Sprint2-Protokoll
+# Sprint1-Protokoll
 
-**Datum / Uhrzeit**: XXXXXXXX
+**Datum / Uhrzeit**: 06.01.2025
 **Ort**: Microsoft Teams  
 **Teilnehmer**: 
 - Student: Marc Hofstetter
+- CNC SME: Philipp Stark
+- PO/SME  : Philipp Rohr
+
+Aufgrund der aktuellen ereignisse konnten die PO und SME nicht teilnehmen. Es gab jedoch ausserordentliche Abklärungen.
 
 ### Aktueller Fortschritt in Prozent
 
-- **Dokumentation**: XXX%
-- **Umsetzung**: XXX%
-- **Präsentation**: XXX%
+- **Dokumentation**: 70%
+- **Umsetzung**: 95%
+- **Präsentation**: 0%
 
 ### Aktueller Zeitplan
 
+![Sprint1Zeitplan](../../../resources/images/Sprint2Zeitplan.PNG)
 
 ### Aktueller Entwicklungsstand
 
-- **Dokumentation**:
-- **Präsentation**:
+- **Erstellung des Kubernetes Clusters**: Der K8s Cluster konnte erfolgreich erstellt werden.
+- **Azure Devops Pipeline**: Die Pipeline erstellt erfolgreich das Image und Deployed dies entsprechend auf dem K8s Cluster.
+- **Monitoring des NGINX**: Das Monitoring konnte erfolgreich implementiert werden.
+- **HPA des NGINX**: HPA wurde konfiguriert, leider bisher noch nicht getestet.
+- **Dokumentation**: Die eigentliche Dokumentation zur Arbeit ist etwa 70% erledigt.
+- **Frage an die Experten**: Keine.
+- **Präsentation**: Die Präsentation wurde bisher noch nicht erstellt.
 
 ### Vergleich zu den Projektzielen
 
-- **Projektziele**:
+- **Projektziele**: Sind aktuell nicht gefährdet.
 
 ### Keep / Try / Drop
 
 - **Keep**: 
-- **Try**:.
-- **Drop**:
+- **Try**: Die Priorisierung des Projekts steht jetzt an oberster Stelle.
+- **Drop**: Keine
 
 ### To Do
 
-- **Präsentation**:
+- **Dokumentation**: Dokumentation fortsetzen
+- **Präsentation**: Präsentation erstellen
+
+![Sprint2Kanban](../../../resources/images/Sprint2Kanban.PNG)
 
 ### Aufgetretene Probleme
 
-- **Zeitmanagement**:
+- **Zeitmanagement**: Es gab keine größeren Probleme, abgesehen von Herausforderungen im Zeitmanagement.
 
 ### Backlog
 
