@@ -375,35 +375,7 @@ Eine Beispiel-HTML-Datei.
 </html>
 ```
 
-### 4. NGINX Konfigurations Datei `nginx/nginx.conf`
-
-```
-worker_processes  1;
-
-events {
-    worker_connections  1024;
-}
-
-http {
-    server {
-        listen 80;
-        server_name localhost;
-
-        location / {
-            root /usr/share/nginx/html;
-            index index.html;
-        }
-
-        location /nginx_status {
-            stub_status;
-            allow 127.0.0.1; # Zugriff nur vom Prometheus Exporter erlaubt
-            deny all;
-        }
-    }
-}
-```
-
-### 5. Sample Ingress File
+### 4. Sample Ingress File
 
 Demonstriert die Konfiguration eines Ingress Controllers für nginx (für spätere produktive Umgebungen).
 
