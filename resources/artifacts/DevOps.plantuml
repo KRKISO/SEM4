@@ -1,0 +1,26 @@
+@startuml
+cloud "Azure" {
+  node "Azure Container Registry (ACR)" as ACR
+}
+
+node "Azure DevOps Agent" as DevOpsAgent {
+  [CI/CD Pipelines]
+}
+
+cloud "Kubernetes Cluster (K0S)" {
+  node "Control Plane" as ControlPlane {
+    [API Server]
+    [Scheduler]
+    [Controller Manager]
+  }
+  node "Worker Nodes" as WorkerNodes {
+    [Worker Node 1]
+    [Worker Node 2]
+    [Worker Node 3]
+  }
+}
+
+ACR --> ControlPlane : Pulls Docker Images
+DevOpsAgent --> ACR : Pushes Docker Images
+DevOpsAgent --> ControlPlane : Applies Deployments
+@enduml
