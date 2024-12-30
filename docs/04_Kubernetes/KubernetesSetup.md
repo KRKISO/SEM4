@@ -21,13 +21,13 @@ In diesem Abschnitt wird die Einrichtung eines K0s-Clusters auf der schuleigenen
 
 Der K0S Cluster wird folgende struktur haben:
 
-![Sprint1Zeitplan](../../../resources/images/K0SCluster.PNG)
+![K0SCluster](../../resources/images/K0SCluster.PNG)
 
 Wie zu sehen ist, wird hier der K0S-Cluster mit zwei Controllern und drei Workern aufgesetzt. Ein Controller und zwei Worker wären für das Projekt ausreichend gewesen, die gewählte Konfiguration bietet jedoch zusätzliche Redundanz und Skalierbarkeit.
 
 ### Provider-Konfiguration (`provider.tf`)
 
-```hcl
+```
 terraform {
   required_providers {
     maas = {
@@ -46,7 +46,7 @@ provider "maas" {
 
 ### Variablen (`variables.tf`)
 
-```hcl
+```
 variable "url" {
   description = "URL des MAAS-API-Servers"
   type        = string
@@ -60,7 +60,7 @@ variable "key" {
 ```
 
 ### Hauptkonfiguration (`main.tf`)
-```hcl
+```
 locals {
   worker_instances_count     = 3
   controller_instances_count = 2
@@ -143,7 +143,7 @@ terraform apply -auto-approve
 
 Cloud-Init führt automatisch die Installation und Konfiguration des K0s-Clusters durch.
 
-Nach der dem eingetlichen Setup des Clusters habe ich noch folgende Schritte durchgeführt um die Einrichtung zu vervollgständigen:
+Nach der dem eingetlichen Setup des Clusters habe ich noch folgende Schritte durchgeführt um die Einrichtung zu komplettieren:
 
 ```bash
 sudo snap install kubectl --classic

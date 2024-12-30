@@ -9,10 +9,9 @@ nav_order: 5
 
 ## Übersicht der Infrastruktur
 
-![Sprint1Zeitplan](../../../resources/images/DevOps.PNG)
+Das folgende Diagramm zeigt die Verbindungen zwischen dem Azure Container Registry (ACR), dem Azure DevOps Agent und dem Kubernetes-Cluster (K0S). Der DevOps Agent steuert sowohl das Pushen der Docker-Images zum ACR als auch die Bereitstellung dieser Images im Kubernetes-Cluster.
 
-Dieses Diagramm zeigt die Verbindungen zwischen dem Azure Container Registry (ACR), dem Azure DevOps Agent und dem Kubernetes-Cluster (K0S). Der DevOps Agent steuert sowohl das Pushen der Docker-Images zum ACR als auch die Bereitstellung dieser Images im Kubernetes-Cluster.
-
+![DevOps](../../resources/images/DevOps.PNG)
 
 ## Einführung
 
@@ -93,7 +92,7 @@ Ein Azure DevOps Agent ist erforderlich, um CI/CD-Pipelines auszuführen. Dieser
 
 2. **ServiceAccount für Azure DevOps einrichten:**
    - Erstelle die Datei `azure-devops-sa.yaml`:
-     ```yaml
+    ```yaml
     kind: ServiceAccount
     metadata:
     name: azure-devops-sa
@@ -111,11 +110,11 @@ Ein Azure DevOps Agent ist erforderlich, um CI/CD-Pipelines auszuführen. Dieser
     - kind: ServiceAccount
     name: azure-devops-sa
     namespace: default
-     ```
+    ```
    - Anwenden:
-     ```bash
+    ```bash
      kubectl apply -f azure-devops-sa.yaml
-     ```
+    ```
 
 3. **Service-Account-Token abrufen:**
    ```bash
@@ -126,10 +125,10 @@ Ein Azure DevOps Agent ist erforderlich, um CI/CD-Pipelines auszuführen. Dieser
    ```bash
    ubuntu@cloud-hf-16-c1:~$ kubectl get secrets
     NAME                    TYPE                                  DATA   AGE
-    acr-secret              kubernetes.io/dockerconfigjson        1      33d
-    azure-devops-sa-token   kubernetes.io/service-account-token   3      33d
+    acr-secret              kubernetes.io/dockerconfigjson        1      5d
+    azure-devops-sa-token   kubernetes.io/service-account-token   3      5d
    ```
-   
+
 4. **Azure DevOps Kubernetes-Verbindung einrichten:**
    - Gehe zu **Project Settings > Service connections**.
    - Erstelle eine neue Verbindung vom Typ **Kubernetes**.
@@ -140,7 +139,7 @@ Ein Azure DevOps Agent ist erforderlich, um CI/CD-Pipelines auszuführen. Dieser
 
 5. **ImagePull-Test:**
    - Stelle sicher, dass Kubernetes das Image ziehen kann:
-     ```yaml
+    ```yaml
      apiVersion: v1
      kind: Pod
      metadata:
@@ -151,14 +150,14 @@ Ein Azure DevOps Agent ist erforderlich, um CI/CD-Pipelines auszuführen. Dieser
          image: sem4acr.azurecr.io/nginx:latest
        imagePullSecrets:
        - name: acr-secret
-     ```
-     ```bash
+    ```
+    ```bash
      kubectl apply -f test-pod.yaml
-     ```
+    ```
      Prüfe den Status:
-     ```bash
+    ```bash
      kubectl describe pod test-pod
-     ```
+    ```
 ## 4. CI/CD-Pipeline Beschreibung
 
 Die Pipeline wurde mit einer `azure-pipelines.yml`-Datei konfiguriert. Diese Datei wurde so angepasst, dass sie NodePort-Dienste verwendet, da kein Ingress-Controller genutzt wird. Dies ist sinnvoll, da das Setup nicht produktiv ist und ein Ingress ohne spezifischen Host wenig Mehrwert bringt.
@@ -363,6 +362,7 @@ stages:
 
 5. **Sample Ingress File:**
    Demonstriert die Konfiguration eines Ingress Controllers für nginx (für spätere produktive Umgebungen).
+
    ```yaml
    apiVersion: networking.k8s.io/v1
    kind: Ingress
