@@ -1,11 +1,11 @@
 ---
 layout: default
-title: 4.6 Kostenanalyse
+title: 4.6 Monitoring
 parent: 4. Kubernetes und DevOps
 nav_order: 6
 ---
 
-# 4.6 Monitoring Setup
+# 4.6 Monitoring
 
 ## Einführung
 
@@ -159,7 +159,7 @@ kubectl logs -n monitoring prometheus-prometheus-stack-kube-prom-prometheus-0
 
 Im Prometheus-Interface konnte ich die verfügbaren Targets und die NGINX-Metriken überprüfen.
 
-![PROM](../../resources/images/PROM.PNG)
+![PROM](../../resources/images/PROM.jpg)
 
 ---
 
@@ -176,11 +176,11 @@ Ich habe Panels hinzugefügt, die folgende Daten darstellen:
 
 Hier ist das finale Dashboard, das die gesammelten Daten visualisiert:
 
-![K0SCluster](../../resources/images/Dashboard.PNG)
+![K0SCluster](../../resources/images/Dashboard.jpg)
 
 Folgend noch die genaue Konfiguration einer Metrik.
 
-![K0SCluster](../../resources/images/Metric.PNG)
+![K0SCluster](../../resources/images/Metric.jpg)
 ---
 
 ## Fazit
