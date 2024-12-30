@@ -9,137 +9,143 @@ nav_order: 5
 
 ## Übersicht der Infrastruktur
 
-Das folgende Diagramm zeigt die Verbindungen zwischen dem Azure Container Registry (ACR), dem Azure DevOps Agent und dem Kubernetes-Cluster (K0S). Der DevOps Agent steuert sowohl das Pushen der Docker-Images zum ACR als auch die Bereitstellung dieser Images im Kubernetes-Cluster.
+Das folgende Diagramm zeigt die Verbindungen zwischen dem Azure Container Registry (ACR), dem Azure DevOps Agent und dem Kubernetes-Cluster (K0S). Der DevOps Agent steuert sowohl das Pushen der Docker-Images zum ACR als auch die Bereitstellung dieser Images direkt im Kubernetes-Cluster. Die Verbindung erfolgt nicht über Azure DevOps, sondern direkt vom Agent zum Cluster.
 
 ![DevOps](../../resources/images/DevOps.PNG)
 
 ## Einführung
 
-Dieser Abschnitt beschreibt die Einrichtung der Azure DevOps-Umgebung für die Integration eines Azure Container Registry (ACR), eines Azure DevOps Agents und eines Kubernetes-Clusters (K0S). Die Schritte umfassen:
+Ich habe die Einrichtung der Azure DevOps-Umgebung durchgeführt, um das Azure Container Registry (ACR), den Azure DevOps Agent und den Kubernetes-Cluster (K0S) miteinander zu integrieren. Im Folgenden beschreibe ich die Schritte, die ich dafür umgesetzt habe:
 
 1. Einrichtung eines Azure Container Registry (ACR).
 2. Bereitstellung eines Azure DevOps Agents auf einem separaten virtuellen Server.
 3. Verbindung des ACR, des DevOps Agents und des Kubernetes-Clusters.
 4. Beschreibung der CI/CD-Pipeline in Azure DevOps.
+5. Erstellung zusätzlicher Ressourcen (z. B. Deployment, Service, Dockerfile, HTML).
 
+---
 
 ## 1. Einrichtung eines Azure Container Registry (ACR)
 
 Das Azure Container Registry dient als Speicher für Docker-Images, die im Kubernetes-Cluster verwendet werden.
 
 ### Schritte:
-1. **Erstelle ein neues ACR**
-   - Navigiere im Azure-Portal zu **Container Registry** und klicke auf **Create**.
-   - Wähle die Subscription und die Resource Group (z. B. `Sem4`).
-   - Gib einen Namen ein (z. B. `SEM4ACR`).
-   - Setze die SKU auf `Basic` für einfache Projekte.
-   - Bestätige mit **Review + Create**.
 
-2. **Berechtigungen einrichten:**
-   ```bash
-   az ad sp create-for-rbac --name acr-pull --scopes $(az acr show --name SEM4ACR --resource-group Sem4 --query id --output tsv) --role acrpull --query password --output tsv
-   ```
-   - Notiere die generierten Zugangsdaten (AppID, Passwort, Tenant).
-   - Diese werden später für Kubernetes als Secret verwendet.
+1. **Erstellen eines neuen ACR:**
+   - Ich habe im Azure-Portal ein neues Container Registry erstellt.
+   - Dabei habe ich folgende Konfigurationen gewählt:
+     - Subscription: Meine Azure Subscription.
+     - Resource Group: `Sem4`.
+     - Name: `SEM4ACR`.
+     - SKU: `Basic`.
 
+2. **Einrichten von Berechtigungen:**
+   - Ich habe mithilfe des folgenden Befehls einen Service Principal erstellt, um Pull-Berechtigungen für das ACR zu erteilen:
+     ```bash
+     az ad sp create-for-rbac --name acr-pull --scopes $(az acr show --name SEM4ACR --resource-group Sem4 --query id --output tsv) --role acrpull --query "{appId:appId, password:password, tenant:tenant}" --output json
+     ```
+   - Die generierten Zugangsdaten (AppID, Passwort, Tenant) habe ich sicher gespeichert, da sie später für Kubernetes als Secret benötigt werden.
+
+---
 
 ## 2. Bereitstellung eines Azure DevOps Agents
 
-Ein Azure DevOps Agent ist erforderlich, um CI/CD-Pipelines auszuführen. Dieser wurde auf einem separaten virtuellen Server bereitgestellt.
+Ein Azure DevOps Agent ist erforderlich, um CI/CD-Pipelines auszuführen. Ich habe diesen Agent auf einem separaten virtuellen Server bereitgestellt.
 
 ### Warum ein separater Server?
-- **Sicherheit:** Vermeidet direkte Abhängigkeiten im Kubernetes-Cluster.
-- **Docker-in-Docker:** Erlaubt die Erstellung und Verwaltung von Containern im Agent.
+
+- **Sicherheit:** Dadurch vermeide ich direkte Abhängigkeiten innerhalb des Kubernetes-Clusters.
+- **Docker-in-Docker:** Der Agent kann eigenständig Container erstellen und verwalten.
 
 ### Schritte:
-1. **Virtuelle Maschine erstellen:**
-   - Erstelle einen neuen virtuellen Server (z. B. Ubuntu).
-   - Installiere Docker:
+
+1. **Erstellen der virtuellen Maschine:**
+   - Ich habe einen neuen Ubuntu-Server erstellt und Docker installiert:
      ```bash
-     sudo apt update && sudo apt install docker.io -y
+     sudo apt update && sudo apt install -y docker.io
      sudo usermod -aG docker $USER
      ```
+   - Zusätzlich habe ich das Docker Buildx-Plugin eingerichtet:
+     ```bash
+     sudo curl -SL https://github.com/docker/buildx/releases/latest/download/buildx-linux-amd64 -o /usr/libexec/docker/cli-plugins/docker-buildx
+     sudo chmod +x /usr/libexec/docker/cli-plugins/docker-buildx
+     sudo systemctl restart docker
+     ```
 
-2. **Azure DevOps Agent einrichten:**
-   - Lade den Agent herunter:
+2. **Einrichten des Azure DevOps Agents:**
+   - Ich habe den Agent heruntergeladen und eingerichtet:
      ```bash
      mkdir myagent && cd myagent
      curl -O https://vstsagentpackage.azureedge.net/agent/2.213.2/vsts-agent-linux-x64-2.213.2.tar.gz
      tar zxvf vsts-agent-linux-x64-2.213.2.tar.gz
-     ```
-   - Konfiguriere den Agent:
-     ```bash
      ./config.sh --url https://dev.azure.com/<organization> --auth PAT --token <personal-access-token>
      ```
-   - Starte den Agent:
+   - Schließlich habe ich den Agent als Dienst installiert und gestartet:
      ```bash
      sudo ./svc.sh install
      sudo ./svc.sh start
      ```
 
+---
+
 ## 3. Verbindung zwischen ACR, DevOps Agent und Kubernetes
 
 ### Schritte:
+
 1. **Kubernetes-Secret für ACR erstellen:**
-   ```bash
-   kubectl create secret docker-registry acr-secret      --docker-server=SEM4ACR.azurecr.io      --docker-username=<appId>      --docker-password=<password>      --docker-email=<email>
-   ```
-   **Ergänzung:**
-   - Stelle sicher, dass die Zugangsdaten korrekt sind, indem du den Secret-Inhalt überprüfst:
+   - Mit den zuvor gespeicherten Zugangsdaten habe ich ein Docker-Registry-Secret im Kubernetes-Cluster erstellt:
+     ```bash
+     kubectl create secret docker-registry acr-secret \
+       --docker-server=sem4acr.azurecr.io \
+       --docker-username=<appId> \
+       --docker-password=<password> \
+       --docker-email=<email>
+     ```
+   - Zur Verifikation habe ich den Secret-Inhalt überprüft:
      ```bash
      kubectl get secret acr-secret -n default -o jsonpath='{.data.\.dockerconfigjson}' | base64 -d
      ```
 
 2. **ServiceAccount für Azure DevOps einrichten:**
-   - Erstelle die Datei `azure-devops-sa.yaml`:
-    ```yaml
-    kind: ServiceAccount
-    metadata:
-    name: azure-devops-sa
-    namespace: default
-    ---
-    apiVersion: rbac.authorization.k8s.io/v1
-    kind: ClusterRoleBinding
-    metadata:
-    name: azure-devops-rolebinding
-    roleRef:
-    apiGroup: rbac.authorization.k8s.io
-    kind: ClusterRole
-    name: cluster-admin
-    subjects:
-    - kind: ServiceAccount
-    name: azure-devops-sa
-    namespace: default
-    ```
-   - Anwenden:
-    ```bash
+   - Ich habe eine YAML-Datei erstellt, um einen ServiceAccount und die zugehörige ClusterRoleBinding zu konfigurieren:
+     ```yaml
+     apiVersion: v1
+     kind: ServiceAccount
+     metadata:
+       name: azure-devops-sa
+       namespace: default
+     ---
+     kind: ClusterRoleBinding
+     apiVersion: rbac.authorization.k8s.io/v1
+     metadata:
+       name: azure-devops-rolebinding
+     subjects:
+       - kind: ServiceAccount
+         name: azure-devops-sa
+         namespace: default
+     roleRef:
+       kind: ClusterRole
+       name: cluster-admin
+       apiGroup: rbac.authorization.k8s.io
+     ```
+   - Ich habe die Datei mit folgendem Befehl angewendet:
+     ```bash
      kubectl apply -f azure-devops-sa.yaml
-    ```
+     ```
 
-3. **Service-Account-Token abrufen:**
-   ```bash
-   kubectl describe secret $(kubectl get secrets | grep azure-devops-sa | awk '{print $1}') -n default
-   ```
-   Notiere das `data.token`, um es in Azure DevOps zu verwenden.
+3. **Abrufen des Service-Account-Tokens:**
+   - Um das ServiceAccount-Token zu erhalten, habe ich den folgenden Befehl ausgeführt:
+     ```bash
+     kubectl describe secret $(kubectl get secrets | grep azure-devops-sa | awk '{print $1}') -n default
+     ```
+   - Dieses Token wurde direkt im DevOps-Agenten genutzt, um mit dem Kubernetes-Cluster zu interagieren.
 
-   ```bash
-   ubuntu@cloud-hf-16-c1:~$ kubectl get secrets
-    NAME                    TYPE                                  DATA   AGE
-    acr-secret              kubernetes.io/dockerconfigjson        1      5d
-    azure-devops-sa-token   kubernetes.io/service-account-token   3      5d
-   ```
-
-4. **Azure DevOps Kubernetes-Verbindung einrichten:**
-   - Gehe zu **Project Settings > Service connections**.
-   - Erstelle eine neue Verbindung vom Typ **Kubernetes**.
-   - Füge folgende Daten ein:
-     - **Kubernetes cluster URL:** `https://<cluster-ip>:6443`
-     - **Service Account Token:** Das oben notierte Token.
-     - **Kubernetes namespace:** `default` (oder dein bevorzugter Namespace).
+4. **Direkte Verbindung vom DevOps-Agenten zu Kubernetes:**
+   - Der DevOps-Agent kommuniziert direkt mit dem Kubernetes-Cluster. Dazu werden `kubectl`-Befehle innerhalb der Pipeline-Skripte verwendet, um Deployments und andere Ressourcen im Cluster zu verwalten.
 
 5. **ImagePull-Test:**
-   - Stelle sicher, dass Kubernetes das Image ziehen kann:
-    ```yaml
+   - Ich habe einen Test-Pod erstellt, um sicherzustellen, dass Kubernetes das Docker-Image aus dem ACR ziehen kann:
+     ```yaml
      apiVersion: v1
      kind: Pod
      metadata:
@@ -150,19 +156,18 @@ Ein Azure DevOps Agent ist erforderlich, um CI/CD-Pipelines auszuführen. Dieser
          image: sem4acr.azurecr.io/nginx:latest
        imagePullSecrets:
        - name: acr-secret
-    ```
-    ```bash
+     ```
+     ```bash
      kubectl apply -f test-pod.yaml
-    ```
-     Prüfe den Status:
-    ```bash
      kubectl describe pod test-pod
-    ```
+     ```
+
+---
+
 ## 4. CI/CD-Pipeline Beschreibung
 
-Die Pipeline wurde mit einer `azure-pipelines.yml`-Datei konfiguriert. Diese Datei wurde so angepasst, dass sie NodePort-Dienste verwendet, da kein Ingress-Controller genutzt wird. Dies ist sinnvoll, da das Setup nicht produktiv ist und ein Ingress ohne spezifischen Host wenig Mehrwert bringt.
+### Inhalte der Pipeline
 
-### Inhalte der Pipeline:
 ```yaml
 trigger:
 - main
@@ -224,222 +229,205 @@ stages:
         kubectl apply -f kubernetes/nginx_service.yaml
         kubectl apply -f kubernetes/metrics_service.yaml
       displayName: Apply Kubernetes Manifests
+
+---
+
+## 5. Zusätzliche Dateien
+
+### 1. `kubernetes/deployment.yaml`
+
+Beschreibt die Bereitstellung des Docker-Containers im Kubernetes-Cluster.
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: sem4acr.azurecr.io/nginx-static-content:$(acr_version)
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: "250m"
+            memory: "256Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+      - name: nginx-prometheus-exporter
+        image: nginx/nginx-prometheus-exporter:latest
+        args: ["-nginx.scrape-uri", "http://localhost/nginx_status"]
+        ports:
+        - containerPort: 9113
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "200m"
+            memory: "256Mi"
+      imagePullSecrets:
+      - name: acr-secret
 ```
 
-### Zusätzliche Dateien:
-1. **`kubernetes/deployment.yaml`:**
-   Beschreibt die Bereitstellung des Docker-Containers im Kubernetes-Cluster.
-   ```yaml
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-    name: nginx-deployment
-    namespace: default
-    spec:
-    replicas: 1
-    selector:
-        matchLabels:
-        app: nginx
-    template:
-        metadata:
-        labels:
-            app: nginx
-        spec:
-        containers:
-        - name: nginx
-            image: sem4acr.azurecr.io/nginx-static-content:$(acr_version)
-            ports:
-            - containerPort: 80
-            imagePullPolicy: Always
-            resources:
-            requests:
-                cpu: "250m"    # Mindestanforderungen
-                memory: "256Mi"
-            limits:
-                cpu: "500m"    # Maximale Nutzung
-                memory: "512Mi"
-        - name: nginx-prometheus-exporter
-            image: nginx/nginx-prometheus-exporter:latest
-            args: ["-nginx.scrape-uri", "http://localhost/nginx_status"]
-            ports:
-            - containerPort: 9113
-            resources:
-            requests:
-                cpu: "100m"
-                memory: "128Mi"
-            limits:
-                cpu: "200m"
-                memory: "256Mi"
-        imagePullSecrets:
-        - name: acr-secret
-   ```
+### 2. `kubernetes/nginx_service.yaml`
 
-2. **`kubernetes/nginx_service.yaml`:**
-   Konfiguriert den Service als NodePort.
-   ```yaml
-    apiVersion: v1
-    kind: Service
-    metadata:
-    name: nginx-public-service
-    namespace: default
-    labels:
-        app: nginx-public
-    spec:
-    type: NodePort
-    ports:
-        - name: public
-        protocol: TCP
-        port: 80           # Port for accessing the service
-        targetPort: 80     # Maps to the NGINX container port
-        nodePort: 30001    # NodePort for external access
-    selector:
-        app: nginx
-   ```
+Konfiguriert den Service als NodePort.
 
-3. **`Dockerfile`:**
-   Definiert das Docker-Image.
-   ```dockerfile
-    FROM nginx:latest
-    COPY ./html /usr/share/nginx/html
-    COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
-   ```
-
-4. **`html/index.html`:**
-   Eine Beispiel-HTML-Datei.
-   ```html
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sample HTML Page</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f0f0f0;
-                margin: 0;
-                padding: 0;
-            }
-            header {
-                background-color: #333;
-                color: white;
-                padding: 10px 0;
-                text-align: center;
-            }
-            main {
-                padding: 20px;
-                text-align: center;
-            }
-            footer {
-                background-color: #333;
-                color: white;
-                padding: 10px 0;
-                text-align: center;
-                position: fixed;
-                width: 100%;
-                bottom: 0;
-            }
-            a {
-                color: #007BFF;
-                text-decoration: none;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1>Welcome to My Sample HTML Page</h1>
-        </header>
-        <main>
-            <p>Das ist die Sample HTML Page der SEM4.</p>
-            <p>version: 1.0.</p>
-        </main>
-        <footer>
-            <p>&copy; 2024 Sample HTML Page. All rights reserved.</p>
-        </footer>
-    </body>
-    </html>
-   ```
-
-5. **Sample Ingress File:**
-   Demonstriert die Konfiguration eines Ingress Controllers für nginx (für spätere produktive Umgebungen).
-
-   ```yaml
-   apiVersion: networking.k8s.io/v1
-   kind: Ingress
-   metadata:
-     name: nginx-ingress
-     annotations:
-       nginx.ingress.kubernetes.io/rewrite-target: /
-   spec:
-     rules:
-     - host: example.com
-       http:
-         paths:
-         - path: /
-           pathType: Prefix
-           backend:
-             service:
-               name: nginx-service
-               port:
-                 number: 80
-   ```
-
-## Verbindung zwischen Azure DevOps und Kubernetes-Cluster
-
-### 1. Erstellen eines Service-Accounts im Kubernetes-Cluster
-Damit Azure DevOps Zugriff auf den Cluster erhält, wird ein spezieller Service-Account benötigt.
-
-**YAML-Datei für den Service-Account und die Berechtigungen:**
 ```yaml
 apiVersion: v1
-kind: ServiceAccount
+kind: Service
 metadata:
-  name: azure-devops-sa
+  name: nginx-public-service
   namespace: default
----
-kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
+  labels:
+    app: nginx-public
+spec:
+  type: NodePort
+  ports:
+    - name: public
+      protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30001
+  selector:
+    app: nginx
+```
+
+### 3. `Dockerfile`
+
+Definiert das Docker-Image.
+
+```dockerfile
+FROM nginx:latest
+COPY ./html /usr/share/nginx/html
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+```
+
+### 4. `html/index.html`
+
+Eine Beispiel-HTML-Datei.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample HTML Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Sample HTML Page</h1>
+    </header>
+    <main>
+        <p>Das ist die Sample HTML Page der SEM4.</p>
+        <p>version: 1.0.</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sample HTML Page. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+```
+
+### 4. `nginx/nginx.conf`
+
+```
+worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    server {
+        listen 80;
+        server_name localhost;
+
+        location / {
+            root /usr/share/nginx/html;
+            index index.html;
+        }
+
+        location /nginx_status {
+            stub_status;
+            allow 127.0.0.1; # Zugriff nur vom Prometheus Exporter erlaubt
+            deny all;
+        }
+    }
+}
+```
+
+### 5. Sample Ingress File
+
+Demonstriert die Konfiguration eines Ingress Controllers für nginx (für spätere produktive Umgebungen).
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
-  name: azure-devops-rolebinding
-subjects:
-  - kind: ServiceAccount
-    name: azure-devops-sa
-    namespace: default
-roleRef:
-  kind: ClusterRole
-  name: cluster-admin
-  apiGroup: rbac.authorization.k8s.io
+  name: nginx-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-service
+            port:
+              number: 80
 ```
 
-**Anwenden im Cluster:**
-```bash
-kubectl apply -f azure-devops-sa.yaml
-```
+---
 
-### 2. Abrufen des Service-Account-Tokens
-Das Service-Account-Token wird benötigt, um die Verbindung von Azure DevOps zum Cluster einzurichten.
-
-**Token abrufen:**
-```bash
-kubectl describe secret $(kubectl get secrets | grep azure-devops-sa | awk '{print $1}') -n default
-```
-
-Das Token wird unter `data.token` ausgegeben. Dieses Token sollte sicher gespeichert werden.
-
-### 3. Konfigurieren der Kubernetes-Service-Verbindung in Azure DevOps
-In Azure DevOps wird eine Service-Verbindung eingerichtet, um den Cluster mit den Pipelines zu verbinden.
-
-**Schritte:**
-1. Navigiere in Azure DevOps zu **Project Settings > Service connections**.
-2. Klicke auf **New service connection** und wähle **Kubernetes**.
-3. Gib folgende Daten ein:
-   - **Kubernetes cluster URL:** Die Cluster-API-URL (z. B. `https://<cluster-ip>:6443`).
-   - **Service Account Token:** Das zuvor abgerufene Token.
-   - **Kubernetes namespace:** `default` (oder ein anderer gewünschter Namespace).
-4. Teste die Verbindung und speichere sie.
-
-### 4. Verknüpfen der Service-Verbindung mit der Pipeline
-Die zuvor erstellte Service-Verbindung wird in der Pipeline verwendet.
-
-
-Mit diesen Schritten ist die Azure DevOps-Integration erfolgreich abgeschlossen. Die NodePort-Konfiguration bietet einfachen Zugriff auf die Anwendung, ohne einen Ingress-Controller zu benötigen, was für Entwicklungsumgebungen ideal ist. Für produktive Umgebungen könnte der bereitgestellte Ingress-Beispiel genutzt werden.
+Mit diesen Schritten habe ich die Azure DevOps-Integration erfolgreich umgesetzt. Die NodePort-Konfiguration bietet einfachen Zugriff auf die Anwendung, ohne dass ein Ingress-Controller benötigt wird. Für produktive Umgebungen könnte jedoch ein Ingress sinnvoll sein.
