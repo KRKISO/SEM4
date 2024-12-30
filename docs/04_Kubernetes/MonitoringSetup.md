@@ -170,9 +170,9 @@ Nachdem ich mich bei Grafana eingeloggt habe, habe ich ein neues Dashboard erste
 
 ### Dashboard-Konfiguration
 Ich habe Panels hinzugefügt, die folgende Daten darstellen:
-- **Anzahl der HTTP-Anfragen**
-- **CPU- und Arbeitsspeicher-Auslastung der NGINX-Pods**
-- **Antwortzeiten**
+- **Anfragen pro Sekunde**
+- **Status des NGINX Pods**
+- **Aktive Verbindungen**
 
 Hier ist das finale Dashboard, das die gesammelten Daten visualisiert:
 
