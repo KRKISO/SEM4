@@ -377,7 +377,7 @@ Eine Beispiel-HTML-Datei.
 
 ### 4. Sample Ingress File
 
-Demonstriert die Konfiguration eines Ingress Controllers für nginx (für spätere produktive Umgebungen).
+Demonstriert die Konfiguration eines Ingress Controllers für nginx (für spätere produktive Umgebungen). Leider haben wir keinen Hostname im MAAS, somit ist die hauptfunktion von Ingress nicht gegeben. Aus diesem Grund habe ich mich dazu entschieden keinen Ingress zu konfigurieren.
 
 ```yaml
 apiVersion: networking.k8s.io/v1
