@@ -94,7 +94,7 @@ resource "maas_vm_instance" "k8s_worker" {
 ```
 
 ### Cloud-Init-Konfiguration (`cloud_init_k0s.yaml`)
-```hcl
+```yaml
 #cloud-config
 package_update: true
 package_upgrade: true

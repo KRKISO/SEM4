@@ -7,6 +7,7 @@ nav_order: 7
 
 ## 4.7 Horizontaler Pod Autoscaler (HPA)
 
+
 Der **Horizontal Pod Autoscaler (HPA)** ist eine Kubernetes-Ressource, die die Anzahl der **Replikate eines Deployments, ReplicaSets oder StatefulSets** automatisch basierend auf der CPU- oder Speicher-Auslastung skaliert.
 
 ### Was ist der Horizontal Pod Autoscaler (HPA)?
@@ -15,7 +16,6 @@ Der **Horizontal Pod Autoscaler (HPA)** ist eine Kubernetes-Ressource, die die A
 - Er kann auch mit **Prometheus-basierten benutzerdefinierten Metriken** erweitert werden.
 - Ziel: Sicherstellen, dass **genügend Pods** laufen, um die Last zu bewältigen, aber nicht zu viele Ressourcen verschwendet werden.
 
----
 
 ## Installation des `metrics-server` für HPA
 
@@ -36,7 +36,6 @@ Falls der Metrics Server nicht läuft, überprüfe die Logs:
 kubectl logs -l app.kubernetes.io/name=metrics-server -n kube-system
 ```
 
----
 
 ## Erstellen der `hpa.yaml` Datei für Nginx
 
@@ -70,7 +69,6 @@ spec:
         averageUtilization: 50 # Scale wenn Speicher über 50% ist
 ```
 
----
 
 ## HPA in Kubernetes Anwenden
 
@@ -144,4 +142,4 @@ nginx-deployment-59f86c5f5f-lv2wm   0/2     ContainerCreating   0          3s
 
 Im Folgenden Bild ist zu sehen, wie graphana automatisch die neuen Pods im Dashboard anzeigt.
 
-![HPA](../../resources/images/HPA.PNG)
+![HPA](../../resources/images/HPA.jpg)
