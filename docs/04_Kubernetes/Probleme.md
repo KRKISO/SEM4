@@ -1,11 +1,11 @@
 ---
 layout: default
-title: 4.8 Probleme
+title: 4.9 Probleme
 parent: 4. Kubernetes und DevOps
-nav_order: 8
+nav_order: 9
 ---
 
-# 4.8 Probleme
+# 4.9 Probleme
 
 Auf meinem Weg zum funktionierenden K8S Cluster mit Azure DevOps integration bin ich auf diverse Probleme gestossen.
 Ich möchte hier auf drei Probleme spezifisch eingehen.

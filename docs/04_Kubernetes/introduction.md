@@ -14,3 +14,8 @@ Ziel ist es, eine einheitliche und automatisierte Umgebung zu schaffen, die sowo
 Die Einrichtung des k0s-Clusters bietet eine flexible Grundlage für die lokale Entwicklung und Tests. Die Wahl von Azure DevOps als CI/CD-Tool ergänzt dies durch leistungsstarke Automatisierungsfunktionen und eine nahtlose Integration in den Entwicklungszyklus.  
 
 Diese Einführung gibt einen Überblick über die geplante Vorgehensweise und liefert die Grundlage für die detaillierte Beschreibung der einzelnen Schritte in den kommenden Kapiteln.
+
+- Einrichtung des **k0s-Kubernetes-Clusters**.
+- Konfiguration der **Azure DevOps CI/CD-Pipeline**.
+- Monitoring mit **Prometheus und Grafana**.
+- Implementierung eines **horizontalen Skalierungsmechanismus** mit HPA.
