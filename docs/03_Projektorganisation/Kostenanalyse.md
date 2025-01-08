@@ -5,7 +5,7 @@ parent: 3. Projektorganisation
 nav_order: 7
 ---
 
-# 4.3 Fiktive Kostenanalyse für die Semesterarbeit
+# 3.7 Fiktive Kostenanalyse für die Semesterarbeit
 
 Die Kostenanalyse vergleicht die monatlichen Ausgaben zwischen einem Azure Kubernetes Cluster (AKS) und einem kostenfrei zur Verfügung gestellten Kubernetes-Cluster der Schule. Ziel ist es, die wirtschaftlich sinnvollere Option für das Projekt zu identifizieren. Dabei werden auch zusätzliche Kosten für den Azure DevOps Account und die Azure Container Registry berücksichtigt.
 

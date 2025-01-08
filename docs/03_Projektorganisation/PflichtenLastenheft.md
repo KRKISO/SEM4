@@ -5,7 +5,7 @@ parent: 3. Projektorganisation
 nav_order: 6
 ---
 
-# 4.2.1 Pflichtenheft
+# 3.6.1 Pflichtenheft
 
 Das Pflichtenheft beschreibt die detaillierten Anforderungen und Ziele, die während der Umsetzung des Projekts erfüllt werden sollen. Es dient als verbindliche Grundlage für die Projektarbeit und legt den angestrebten Soll-Zustand fest.
 
@@ -35,7 +35,7 @@ Das Pflichtenheft beschreibt die detaillierten Anforderungen und Ziele, die wäh
 
 ---
 
-# 4.2.2 Lastenheft
+# 3.6.2 Lastenheft
 
 Das Lastenheft beschreibt die Ausgangslage des Projekts sowie die Anforderungen und Rahmenbedingungen, die vom Projektteam umzusetzen sind. Es bildet die Grundlage für die Planung und Umsetzung.
 
