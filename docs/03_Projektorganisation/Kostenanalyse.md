@@ -1,8 +1,8 @@
 ---
 layout: default
-title: 4.3 Kostenanalyse
-parent: 4. Kubernetes und DevOps
-nav_order: 3
+title: 3.7 Kostenanalyse
+parent: 3. Projektorganisation
+nav_order: 7
 ---
 
 # 4.3 Fiktive Kostenanalyse für die Semesterarbeit

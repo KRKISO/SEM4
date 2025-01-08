@@ -1,8 +1,8 @@
 ---
 layout: default
-title: 4.2 Pflichten und Lastenheft
-parent: 4. Kubernetes und DevOps
-nav_order: 2
+title: 3.6 Pflichten und Lastenheft
+parent: 3. Projektorganisation
+nav_order: 6
 ---
 
 # 4.2.1 Pflichtenheft
