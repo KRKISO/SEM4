@@ -5,7 +5,7 @@ nav_order: 1
 permalink: /
 ---
 
-# K8S!
+# Kubernetes und DevOps Deployment
 
 
 ## Einleitung:
