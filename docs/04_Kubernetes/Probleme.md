@@ -20,8 +20,7 @@ ubuntu@cloud-hf-16-c1:~$ kubectl get namespaces
 E1125 17:27:12.472964   48208 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://10.0.24.147:6443/api?timeout=32s\": dial tcp 10.0.24.147:6443: connect: connection refused"
 ```
 
-Schlussendlich musste ich das syslog und journal deaktivieren, um persistent eine lösung zu haben, ohne den K8S Cluster neu aufzusetzen.
-Eine andere Option wäre, mit LogRotate die Logs zu rotieren, leider habe ich hier aus der Vergangenheit keine guten Erfahrungen.
+Schlussendlich musste ich das syslog und journal deaktivieren, um persistent eine lösung zu haben, ohne den K8S Cluster neu aufzusetzen. Eine andere option wäre, nur einen Control Plane mit mehr Disk aufzusetzen.
 
 ```sh
 1.2G	/var/log/journal

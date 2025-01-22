@@ -113,21 +113,21 @@ Ein Azure DevOps Agent ist erforderlich, um CI/CD-Pipelines auszuführen. Ich ha
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-name: azure-devops-sa
-namespace: default
+  name: azure-devops-sa
+  namespace: default
 ---
-kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
 metadata:
-name: azure-devops-rolebinding
+  name: azure-devops-rolebinding
 subjects:
-- kind: ServiceAccount
+  - kind: ServiceAccount
     name: azure-devops-sa
     namespace: default
 roleRef:
-kind: ClusterRole
-name: cluster-admin
-apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
 ```
 
    - Ich habe die Datei mit folgendem Befehl angewendet:
@@ -152,13 +152,13 @@ kubectl apply -f azure-devops-sa.yaml
 apiVersion: v1
 kind: Pod
 metadata:
-name: test-pod
+  name: test-pod
 spec:
-containers:
-- name: nginx
-    image: sem4acr.azurecr.io/nginx:latest
-imagePullSecrets:
-- name: acr-secret
+  containers:
+    - name: nginx
+      image: sem4acr.azurecr.io/nginx:latest
+  imagePullSecrets:
+    - name: acr-secret
 ```
 ```bash
 kubectl apply -f test-pod.yaml
